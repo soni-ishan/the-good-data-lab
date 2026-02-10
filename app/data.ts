@@ -6,8 +6,8 @@ export const siteConfig = {
 
 export const projects = [
   {
-    title: "GraphRAG Chatbot",
-    description: "A retrieval-augmented generation system using Knowledge Graphs to provide context-aware answers. Built to make complex data querying conversational.",
+    title: "Course Compass",
+    description: "A specialized chatbot for university CS students powered by a Neo4j Knowledge Graph.",
     status: "Completed",
     rank: null,
     links: {
@@ -27,8 +27,8 @@ export const projects = [
     }
   },
   {
-    title: "CSIRO Image2Biomass",
-    description: "Our team's entry for the CSIRO Kaggle competition. A Deep Learning model processing satellite imagery to estimate biomass levels.",
+    title: "CSIRO Image2Biomass Prediction",
+    description: "Engineered a ConvNeXt-based Deep Learning pipeline to estimate vegetation biomass from satellite imagery.",
     status: null,
     rank: "Ranked 2123rd",
     links: {
@@ -47,8 +47,8 @@ export const projects = [
     }
   },
   {
-    title: "Microsoft AI Dev",
-    description: "Currently participating in the Microsoft AI Dev for Days challenge. Building next-gen applications using the latest Azure & AI tools.",
+    title: "Microsoft AI Dev Days Hackathon",
+    description: "Currently participating in the Microsoft AI Dev Days Hackathon.",
     status: "In Progress",
     rank: null,
     links: {

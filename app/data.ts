@@ -83,11 +83,11 @@ export const team = [
     }
   },
   {
-    name: "Ama",
+    name: "Favour Ejike",
     role: "Core Member",
     links: {
-      linkedin: "#",
-      github: "#"
+      linkedin: "https://ca.linkedin.com/in/favour-ejike-3a0a09278",
+      github: "https://github.com/Amachivine"
     },
     theme: {
       bg: "bg-purple-500/10",

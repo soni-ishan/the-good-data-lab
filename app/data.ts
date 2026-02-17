@@ -12,7 +12,7 @@ export const projects = [
     rank: null,
     links: {
       code: "https://github.com/simarpreet0037/CourseCompass",
-      demo: "ec2-34-227-86-112.compute-1.amazonaws.com",
+      demo: "http://ec2-34-227-86-112.compute-1.amazonaws.com",
       kaggle: null
     },
     icon: Database,

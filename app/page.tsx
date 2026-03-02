@@ -1,5 +1,7 @@
-import React from 'react';
-import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database } from 'lucide-react';
+"use client";
+
+import React, { useState } from 'react';
+import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database, Menu, X } from 'lucide-react';
 import { siteConfig, projects, team } from './data';
 
 // Kaggle icon component
@@ -10,6 +12,8 @@ const KaggleIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 overflow-x-hidden">
       
@@ -37,13 +41,46 @@ export default function Home() {
                 href={siteConfig.discord}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Join our Discord server"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40"
               >
-                <MessageSquare className="w-5 h-5" />
+                <MessageSquare className="w-5 h-5" aria-hidden="true" />
                 Join Discord
               </a>
             </div>
+            
+            {/* Mobile menu button */}
+            <button
+              type="button"
+              className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
+          
+          {/* Mobile menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden border-t border-slate-800 py-4">
+              <div className="flex flex-col space-y-4 px-4">
+                <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">Projects</a>
+                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">About</a>
+                <a href="#team" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">Team</a>
+                <a 
+                  href={siteConfig.discord}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Join our Discord server"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25"
+                >
+                  <MessageSquare className="w-5 h-5" aria-hidden="true" />
+                  Join Discord
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -95,9 +132,10 @@ export default function Home() {
               href={siteConfig.discord}
               target="_blank"
               rel="noreferrer"
+              aria-label="Join our Discord server"
               className="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 rounded-xl text-lg font-semibold hover:bg-slate-100 transition-all flex items-center justify-center gap-3 shadow-xl shadow-white/10 hover:scale-105"
             >
-              <MessageSquare className="w-6 h-6" />
+              <MessageSquare className="w-6 h-6" aria-hidden="true" />
               Join the Server
             </a>
             <a 
@@ -268,21 +306,21 @@ export default function Home() {
                 <p className={`${member.theme.text} text-base mb-4`}>{member.role}</p>
                 <div className="flex justify-center gap-4">
                   {member.links.linkedin && member.links.linkedin !== "#" ? (
-                    <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Linkedin className="w-5 h-5" />
+                    <a href={member.links.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name}'s LinkedIn profile`} className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
+                      <Linkedin className="w-5 h-5" aria-hidden="true" />
                     </a>
                   ) : (
-                    <button type="button" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Linkedin className="w-5 h-5" />
+                    <button type="button" aria-label="LinkedIn profile unavailable" disabled className="p-2 rounded-lg bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
+                      <Linkedin className="w-5 h-5" aria-hidden="true" />
                     </button>
                   )}
                   {member.links.github && member.links.github !== "#" ? (
-                    <a href={member.links.github} target="_blank" rel="noreferrer" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Github className="w-5 h-5" />
+                    <a href={member.links.github} target="_blank" rel="noreferrer" aria-label={`${member.name}'s GitHub profile`} className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
+                      <Github className="w-5 h-5" aria-hidden="true" />
                     </a>
                   ) : (
-                    <button type="button" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Github className="w-5 h-5" />
+                    <button type="button" aria-label="GitHub profile unavailable" disabled className="p-2 rounded-lg bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
+                      <Github className="w-5 h-5" aria-hidden="true" />
                     </button>
                   )}
                 </div>

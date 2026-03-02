@@ -1,8 +1,7 @@
-"use client";
-
-import React, { useState } from 'react';
-import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database, Menu, X } from 'lucide-react';
+import React from 'react';
+import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database } from 'lucide-react';
 import { siteConfig, projects, team } from './data';
+import MobileNav from './components/MobileNav';
 
 // Kaggle icon component
 const KaggleIcon = ({ className }: { className?: string }) => (
@@ -12,8 +11,6 @@ const KaggleIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 overflow-x-hidden">
       
@@ -49,38 +46,8 @@ export default function Home() {
               </a>
             </div>
             
-            {/* Mobile menu button */}
-            <button
-              type="button"
-              className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <MobileNav />
           </div>
-          
-          {/* Mobile menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden border-t border-slate-800 py-4">
-              <div className="flex flex-col space-y-4 px-4">
-                <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">Projects</a>
-                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">About</a>
-                <a href="#team" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">Team</a>
-                <a 
-                  href={siteConfig.discord}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Join our Discord server"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25"
-                >
-                  <MessageSquare className="w-5 h-5" aria-hidden="true" />
-                  Join Discord
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
@@ -149,7 +116,8 @@ export default function Home() {
       </section>
 
       {/* Stats / Values */}
-      <section className="py-20 relative">
+      <section className="py-20 relative" aria-labelledby="values-heading">
+        <h2 id="values-heading" className="sr-only">Our Values</h2>
         {/* Data nodes visualization */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <svg className="absolute w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -336,7 +304,7 @@ export default function Home() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="text-slate-700 code-bracket text-sm mb-4">{'// end of file'}</div>
+          <div className="text-slate-500 code-bracket text-sm mb-4">{'// end of file'}</div>
           <p className="text-slate-400 text-base">
             © {new Date().getFullYear()} The Good Data Lab
           </p>

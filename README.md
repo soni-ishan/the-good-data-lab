@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Epoch
 
-## Getting Started
+**Code. Data. Community.**
 
-First, run the development server:
+A student-run collective tackling real-world challenges through data science and AI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🌐 **Live Site:** [epoch.vercel.app](https://epoch.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+💬 **Discord:** [Join the Server](https://discord.gg/w4YuB5QY3u)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Featured Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Course Compass** — A specialized chatbot for university CS students powered by a Neo4j Knowledge Graph
+- **CSIRO Image2Biomass Prediction** — ConvNeXt-based Deep Learning pipeline for vegetation biomass estimation
+- **Microsoft AI Dev Days Hackathon** — Currently participating!
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Team
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Name | Role | GitHub |
+|------|------|--------|
+| Gurinayat Mangat | Founder | [@gkm2004](https://github.com/gkm2004) |
+| Favour Ejike | Core Member | [@Amachivine](https://github.com/Amachivine) |
+| Ishan Soni | Core Member | [@soni-ishan](https://github.com/soni-ishan) |
+| Simarpreet Singh Purba | Core Member | [@simarpreet0037](https://github.com/simarpreet0037) |

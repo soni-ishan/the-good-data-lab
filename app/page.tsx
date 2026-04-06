@@ -1,6 +1,7 @@
 import React from 'react';
 import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database } from 'lucide-react';
 import { siteConfig, projects, team } from './data';
+import MobileNav from './components/MobileNav';
 
 // Kaggle icon component
 const KaggleIcon = ({ className }: { className?: string }) => (
@@ -37,12 +38,15 @@ export default function Home() {
                 href={siteConfig.discord}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Join our Discord server"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40"
               >
-                <MessageSquare className="w-5 h-5" />
+                <MessageSquare className="w-5 h-5" aria-hidden="true" />
                 Join Discord
               </a>
             </div>
+            
+            <MobileNav />
           </div>
         </div>
       </nav>
@@ -96,9 +100,10 @@ export default function Home() {
               href={siteConfig.discord}
               target="_blank"
               rel="noreferrer"
+              aria-label="Join our Discord server"
               className="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 rounded-xl text-lg font-semibold hover:bg-slate-100 transition-all flex items-center justify-center gap-3 shadow-xl shadow-white/10 hover:scale-105"
             >
-              <MessageSquare className="w-6 h-6" />
+              <MessageSquare className="w-6 h-6" aria-hidden="true" />
               Join the Server
             </a>
             <a 
@@ -112,7 +117,8 @@ export default function Home() {
       </section>
 
       {/* Stats / Values */}
-      <section className="py-20 relative">
+      <section className="py-20 relative" aria-labelledby="values-heading">
+        <h2 id="values-heading" className="sr-only">Our Values</h2>
         {/* Data nodes visualization */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <svg className="absolute w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -269,21 +275,21 @@ export default function Home() {
                 <p className={`${member.theme.text} text-base mb-4`}>{member.role}</p>
                 <div className="flex justify-center gap-4">
                   {member.links.linkedin && member.links.linkedin !== "#" ? (
-                    <a href={member.links.linkedin} target="_blank" rel="noreferrer" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Linkedin className="w-5 h-5" />
+                    <a href={member.links.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name}'s LinkedIn profile`} className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
+                      <Linkedin className="w-5 h-5" aria-hidden="true" />
                     </a>
                   ) : (
-                    <button type="button" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Linkedin className="w-5 h-5" />
+                    <button type="button" aria-label="LinkedIn profile unavailable" disabled className="p-2 rounded-lg bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
+                      <Linkedin className="w-5 h-5" aria-hidden="true" />
                     </button>
                   )}
                   {member.links.github && member.links.github !== "#" ? (
-                    <a href={member.links.github} target="_blank" rel="noreferrer" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Github className="w-5 h-5" />
+                    <a href={member.links.github} target="_blank" rel="noreferrer" aria-label={`${member.name}'s GitHub profile`} className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
+                      <Github className="w-5 h-5" aria-hidden="true" />
                     </a>
                   ) : (
-                    <button type="button" className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
-                      <Github className="w-5 h-5" />
+                    <button type="button" aria-label="GitHub profile unavailable" disabled className="p-2 rounded-lg bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
+                      <Github className="w-5 h-5" aria-hidden="true" />
                     </button>
                   )}
                 </div>
@@ -299,7 +305,7 @@ export default function Home() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="text-slate-700 code-bracket text-sm mb-4">{'// end of file'}</div>
+          <div className="text-slate-500 code-bracket text-sm mb-4">{'// end of file'}</div>
           <p className="text-slate-400 text-base">
             © {new Date().getFullYear()} Epoch
           </p>

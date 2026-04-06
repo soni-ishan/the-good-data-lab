@@ -4,7 +4,7 @@
 
 A student-run collective tackling real-world challenges through data science and AI.
 
-🌐 **Live Site:** [epoch.vercel.app](https://epoch.vercel.app)
+🌐 **Live Site:** [epoch-regina.vercel.app](https://epoch.vercel.app)
 
 💬 **Discord:** [Join the Server](https://discord.gg/w4YuB5QY3u)
 

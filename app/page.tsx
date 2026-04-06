@@ -1,7 +1,11 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database } from 'lucide-react';
 import { siteConfig, projects, team } from './data';
 import MobileNav from './components/MobileNav';
+import ThemeToggle from './components/ThemeToggle';
+import ProjectDrawer from './components/ProjectDrawer';
 
 // Kaggle icon component
 const KaggleIcon = ({ className }: { className?: string }) => (
@@ -11,29 +15,43 @@ const KaggleIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const openProjectDrawer = (project: typeof projects[0]) => {
+    setSelectedProject(project);
+    setIsDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
+
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 overflow-x-hidden">
+    <main className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-200 selection:bg-indigo-500/30 overflow-x-hidden transition-colors">
       
       {/* Global background elements */}
       <div className="fixed inset-0 grid-pattern pointer-events-none" />
       
       {/* Gradient orbs - positioned throughout the page */}
-      <div className="fixed top-0 left-0 w-200 h-200 bg-indigo-600/20 rounded-full blur-[120px] animate-float pointer-events-none" style={{ transform: 'translate(-30%, -30%)' }} />
-      <div className="fixed top-1/3 right-0 w-150 h-150 bg-cyan-500/15 rounded-full blur-[100px] animate-float-delayed pointer-events-none" style={{ transform: 'translate(30%, 0)' }} />
-      <div className="fixed bottom-0 left-1/4 w-125 h-125 bg-purple-600/15 rounded-full blur-[100px] animate-float pointer-events-none" />
+      <div className="fixed top-0 left-0 w-200 h-200 bg-indigo-600/10 dark:bg-indigo-600/20 rounded-full blur-[120px] animate-float pointer-events-none" style={{ transform: 'translate(-30%, -30%)' }} />
+      <div className="fixed top-1/3 right-0 w-150 h-150 bg-cyan-500/8 dark:bg-cyan-500/15 rounded-full blur-[100px] animate-float-delayed pointer-events-none" style={{ transform: 'translate(30%, 0)' }} />
+      <div className="fixed bottom-0 left-1/4 w-125 h-125 bg-purple-600/8 dark:bg-purple-600/15 rounded-full blur-[100px] animate-float pointer-events-none" />
       
       {/* Navigation */}
-      <nav className="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md">
+      <nav className="fixed w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <Terminal className="w-8 h-8 text-indigo-400" />
-              <span className="font-bold text-2xl text-slate-100">Epoch</span>
+              <Terminal className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+              <span className="font-bold text-2xl text-slate-900 dark:text-slate-100">Epoch</span>
             </div>
-            <div className="hidden md:flex items-center space-x-10">
-              <a href="#projects" className="text-lg text-slate-300 hover:text-white transition-colors">Projects</a>
-              <a href="#about" className="text-lg text-slate-300 hover:text-white transition-colors">About</a>
-              <a href="#team" className="text-lg text-slate-300 hover:text-white transition-colors">Team</a>
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#projects" className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
+              <a href="#about" className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
+              <a href="#team" className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Team</a>
+              <ThemeToggle />
               <a 
                 href={siteConfig.discord}
                 target="_blank"
@@ -54,45 +72,45 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4">
         {/* Floating code elements - left side */}
-        <div className="absolute left-4 lg:left-16 top-1/4 text-indigo-500/20 code-bracket text-6xl lg:text-8xl animate-drift pointer-events-none select-none">
+        <div className="absolute left-4 lg:left-16 top-1/4 text-indigo-500/10 dark:text-indigo-500/20 code-bracket text-6xl lg:text-8xl animate-drift pointer-events-none select-none">
           {'</>'}
         </div>
-        <div className="absolute left-8 lg:left-32 top-2/3 text-cyan-500/15 code-bracket text-4xl lg:text-6xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-2s' }}>
+        <div className="absolute left-8 lg:left-32 top-2/3 text-cyan-500/10 dark:text-cyan-500/15 code-bracket text-4xl lg:text-6xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-2s' }}>
           {'{ }'}
         </div>
         
         {/* Floating code elements - right side */}
-        <div className="absolute right-4 lg:right-16 top-1/3 text-purple-500/20 code-bracket text-5xl lg:text-7xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-3s' }}>
+        <div className="absolute right-4 lg:right-16 top-1/3 text-purple-500/10 dark:text-purple-500/20 code-bracket text-5xl lg:text-7xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-3s' }}>
           {'( )'}
         </div>
-        <div className="absolute right-8 lg:right-28 top-3/4 text-indigo-500/15 code-bracket text-3xl lg:text-5xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-1s' }}>
+        <div className="absolute right-8 lg:right-28 top-3/4 text-indigo-500/10 dark:text-indigo-500/15 code-bracket text-3xl lg:text-5xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-1s' }}>
           {'[ ]'}
         </div>
         
         {/* Data flow lines */}
-        <div className="absolute left-1/4 top-20 bottom-20 w-px bg-linear-to-b from-transparent via-indigo-500/20 to-transparent pointer-events-none hidden lg:block" />
-        <div className="absolute right-1/4 top-32 bottom-32 w-px bg-linear-to-b from-transparent via-cyan-500/20 to-transparent pointer-events-none hidden lg:block" />
+        <div className="absolute left-1/4 top-20 bottom-20 w-px bg-linear-to-b from-transparent via-indigo-500/10 dark:via-indigo-500/20 to-transparent pointer-events-none hidden lg:block" />
+        <div className="absolute right-1/4 top-32 bottom-32 w-px bg-linear-to-b from-transparent via-cyan-500/10 dark:via-cyan-500/20 to-transparent pointer-events-none hidden lg:block" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-900/30 border border-indigo-500/30 text-indigo-300 text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 border border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-sm mb-6">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 dark:bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600 dark:bg-indigo-500"></span>
             </span>
             Accepting new members
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
             Code. Data. <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 dark:from-indigo-400 to-cyan-600 dark:to-cyan-400">
               Community.
             </span>
           </h1>
           
-          <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            To bridge the gap between academic theory and industry-standard execution.
-            At Epoch, we pick hard problems, build real things, and ship.
-            Each project is an epoch; one full cycle of learning, building, and growing.
+          <p className="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Bringing students together to work on projects to bridge the gap between a degree and being actually job-ready, while polishing our portfolios.
+            <br /><br />
+            We pick hard problems, build real things, and ship. Each project is an epoch — one full cycle of learning, building, and growing.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -101,14 +119,14 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
               aria-label="Join our Discord server"
-              className="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 rounded-xl text-lg font-semibold hover:bg-slate-100 transition-all flex items-center justify-center gap-3 shadow-xl shadow-white/10 hover:scale-105"
+              className="w-full sm:w-auto px-10 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl text-lg font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-all flex items-center justify-center gap-3 shadow-xl shadow-slate-900/10 dark:shadow-white/10 hover:scale-105"
             >
               <MessageSquare className="w-6 h-6" aria-hidden="true" />
               Join the Server
             </a>
             <a 
               href="#projects" 
-              className="w-full sm:w-auto px-10 py-4 bg-slate-800/80 text-white rounded-xl text-lg font-semibold hover:bg-slate-700 border border-slate-600 transition-all hover:scale-105"
+              className="w-full sm:w-auto px-10 py-4 bg-slate-200 dark:bg-slate-800/80 text-slate-900 dark:text-white rounded-xl text-lg font-semibold hover:bg-slate-300 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-600 transition-all hover:scale-105"
             >
               See Our Work
             </a>
@@ -121,7 +139,7 @@ export default function Home() {
         <h2 id="values-heading" className="sr-only">Our Values</h2>
         {/* Data nodes visualization */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <svg className="absolute w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <svg className="absolute w-full h-full opacity-5 dark:opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
             {/* Connection lines */}
             <line x1="20" y1="30" x2="50" y2="50" stroke="url(#lineGradient)" strokeWidth="0.2" />
             <line x1="50" y1="50" x2="80" y2="30" stroke="url(#lineGradient)" strokeWidth="0.2" />
@@ -144,25 +162,25 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 text-center relative z-10">
           <div className="p-6">
-            <div className="bg-indigo-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-indigo-400">
+            <div className="bg-indigo-100 dark:bg-indigo-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-indigo-600 dark:text-indigo-400">
               <Users className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Beginner Friendly</h3>
-            <p className="text-slate-400 text-base leading-relaxed">No experience? No problem. We learn by doing, together.</p>
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">Beginner Friendly</h3>
+            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">No experience? No problem. We learn by doing, together.</p>
           </div>
           <div className="p-6">
-            <div className="bg-cyan-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-cyan-400">
+            <div className="bg-cyan-100 dark:bg-cyan-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-cyan-600 dark:text-cyan-400">
               <Database className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Real Data</h3>
-            <p className="text-slate-400 text-base leading-relaxed">From Kaggle competitions to geospatial analysis.</p>
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">Real Data</h3>
+            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">From Kaggle competitions to geospatial analysis.</p>
           </div>
           <div className="p-6">
-            <div className="bg-purple-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-purple-400">
+            <div className="bg-purple-100 dark:bg-purple-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-purple-600 dark:text-purple-400">
               <Sparkles className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Build for Good</h3>
-            <p className="text-slate-400 text-base leading-relaxed">Projects that solve real problems and help the community.</p>
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">Build & Ship</h3>
+            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">Projects that solve real problems and create real impact.</p>
           </div>
         </div>
       </section>
@@ -170,24 +188,24 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-24 px-4 relative">
         {/* Decorative terminal window in background */}
-        <div className="absolute right-0 top-1/4 w-64 h-48 bg-slate-900/50 rounded-lg border border-slate-800/50 overflow-hidden pointer-events-none opacity-30 hidden xl:block">
-          <div className="h-6 bg-slate-800/50 flex items-center gap-1.5 px-3">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-            <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+        <div className="absolute right-0 top-1/4 w-64 h-48 bg-slate-100 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-800/50 overflow-hidden pointer-events-none opacity-20 dark:opacity-30 hidden xl:block">
+          <div className="h-6 bg-slate-200 dark:bg-slate-800/50 flex items-center gap-1.5 px-3">
+            <div className="w-2.5 h-2.5 rounded-full bg-red-400 dark:bg-red-500/50" />
+            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400 dark:bg-yellow-500/50" />
+            <div className="w-2.5 h-2.5 rounded-full bg-green-400 dark:bg-green-500/50" />
           </div>
-          <div className="p-3 font-mono text-xs text-indigo-400/50">
+          <div className="p-3 font-mono text-xs text-indigo-600 dark:text-indigo-400/50">
             <div>$ python train.py</div>
-            <div className="text-cyan-400/50">Loading data...</div>
-            <div className="text-green-400/50">Epoch 1/100</div>
-            <div className="text-slate-500/50">━━━━━━━━ 45%</div>
+            <div className="text-cyan-600 dark:text-cyan-400/50">Loading data...</div>
+            <div className="text-green-600 dark:text-green-400/50">Epoch 1/100</div>
+            <div className="text-slate-400 dark:text-slate-500/50">━━━━━━━━ 45%</div>
           </div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
-            <p className="text-slate-400 mt-2">What we&apos;ve been building</p>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Featured Projects</h2>
+            <p className="text-slate-600 dark:text-slate-400 mt-2">What we&apos;ve been building</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -199,7 +217,11 @@ export default function Home() {
               const hasKaggle = project.links.kaggle;
               
               return (
-                <div key={index} className={`group bg-slate-900 border border-slate-800 rounded-xl p-6 ${project.theme.border} transition-all hover:-translate-y-1`}>
+                <button
+                  key={index}
+                  onClick={() => openProjectDrawer(project)}
+                  className={`group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 ${project.theme.border} transition-all hover:-translate-y-1 text-left w-full cursor-pointer`}
+                >
                   <div className="flex justify-between items-start mb-4">
                     <div className={`p-3 ${project.theme.bg} rounded-lg ${project.theme.text}`}>
                       <IconComponent className="w-6 h-6" />
@@ -210,33 +232,33 @@ export default function Home() {
                       </span>
                     )}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                  <p className="text-slate-400 text-base mb-6 h-20 leading-relaxed">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{project.title}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-base mb-6 h-20 leading-relaxed">
                     {project.description}
                   </p>
                   <div className="flex gap-3 mt-auto">
                     {hasCode && (
-                      <a href={project.links.code || "#"} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-base font-medium transition-colors">
+                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-slate-200 dark:group-hover:bg-slate-700 text-base font-medium transition-colors">
                         <Github className="w-5 h-5" /> Code
-                      </a>
+                      </span>
                     )}
                     {hasDemo && (
-                      <a href={project.links.demo || "#"} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-base font-medium transition-colors">
+                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-slate-200 dark:group-hover:bg-slate-700 text-base font-medium transition-colors">
                         <ExternalLink className="w-5 h-5" /> Demo
-                      </a>
+                      </span>
                     )}
                     {hasKaggle && (
-                      <a href={project.links.kaggle || "#"} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-base font-medium transition-colors">
+                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-slate-200 dark:group-hover:bg-slate-700 text-base font-medium transition-colors">
                         <KaggleIcon className="w-5 h-5" /> Kaggle
-                      </a>
+                      </span>
                     )}
                     {!hasCode && !hasDemo && !hasKaggle && (
-                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-800/50 text-slate-500 text-base font-medium">
+                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-400 dark:text-slate-500 text-base font-medium">
                         Coming Soon
                       </span>
                     )}
                   </div>
-                </div>
+                </button>
               );
             })}
 
@@ -247,16 +269,16 @@ export default function Home() {
       {/* Who We Are & Team Section */}
       <section id="about" className="py-24 px-4 relative">
         {/* Code decoration - left */}
-        <div className="absolute left-8 top-1/4 text-slate-800 code-bracket text-4xl pointer-events-none select-none hidden lg:block">
+        <div className="absolute left-8 top-1/4 text-slate-200 dark:text-slate-800 code-bracket text-4xl pointer-events-none select-none hidden lg:block">
           {'/**'}
         </div>
-        <div className="absolute left-8 bottom-1/4 text-slate-800 code-bracket text-4xl pointer-events-none select-none hidden lg:block">
+        <div className="absolute left-8 bottom-1/4 text-slate-200 dark:text-slate-800 code-bracket text-4xl pointer-events-none select-none hidden lg:block">
           {'*/'}
         </div>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-6">Who We Are</h2>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Who We Are</h2>
+            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
               Epoch was born from a shared realization: the best way to learn Data Science is to build.
               <br /><br />
               We are a collective of four undergraduates who moved beyond the classroom to tackle global challenges from biomass estimation to agentic AI. 
@@ -264,31 +286,31 @@ export default function Home() {
             </p>
           </div>
 
-          <h3 className="text-2xl font-bold text-white mb-10 text-center" id="team">Meet the Core Team</h3>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-10 text-center" id="team">Meet the Core Team</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
-              <div key={index} className={`bg-slate-950 p-6 rounded-xl border border-slate-800 text-center ${member.theme.border} transition-colors group`}>
+              <div key={index} className={`bg-white dark:bg-slate-950 p-6 rounded-xl border border-slate-200 dark:border-slate-800 text-center ${member.theme.border} transition-colors group`}>
                 <div className={`w-20 h-20 mx-auto ${member.theme.bg} rounded-full flex items-center justify-center ${member.theme.text} mb-4 group-hover:scale-110 transition-transform`}>
                   <User className="w-8 h-8" />
                 </div>
-                <h4 className="text-white font-semibold text-lg">{member.name}</h4>
+                <h4 className="text-slate-900 dark:text-white font-semibold text-lg">{member.name}</h4>
                 <p className={`${member.theme.text} text-base mb-4`}>{member.role}</p>
                 <div className="flex justify-center gap-4">
                   {member.links.linkedin && member.links.linkedin !== "#" ? (
-                    <a href={member.links.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name}'s LinkedIn profile`} className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
+                    <a href={member.links.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name}'s LinkedIn profile`} className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
                       <Linkedin className="w-5 h-5" aria-hidden="true" />
                     </a>
                   ) : (
-                    <button type="button" aria-label="LinkedIn profile unavailable" disabled className="p-2 rounded-lg bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
+                    <button type="button" aria-label="LinkedIn profile unavailable" disabled className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
                       <Linkedin className="w-5 h-5" aria-hidden="true" />
                     </button>
                   )}
                   {member.links.github && member.links.github !== "#" ? (
-                    <a href={member.links.github} target="_blank" rel="noreferrer" aria-label={`${member.name}'s GitHub profile`} className="p-2 rounded-lg bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 transition-all">
+                    <a href={member.links.github} target="_blank" rel="noreferrer" aria-label={`${member.name}'s GitHub profile`} className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
                       <Github className="w-5 h-5" aria-hidden="true" />
                     </a>
                   ) : (
-                    <button type="button" aria-label="GitHub profile unavailable" disabled className="p-2 rounded-lg bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
+                    <button type="button" aria-label="GitHub profile unavailable" disabled className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-400 cursor-not-allowed opacity-50">
                       <Github className="w-5 h-5" aria-hidden="true" />
                     </button>
                   )}
@@ -302,15 +324,22 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-16 relative">
         {/* Gradient line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-linear-to-r from-transparent via-indigo-500/30 dark:via-indigo-500/50 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="text-slate-500 code-bracket text-sm mb-4">{'// end of file'}</div>
-          <p className="text-slate-400 text-base">
+          <div className="text-slate-400 dark:text-slate-500 code-bracket text-sm mb-4">{'// end of file'}</div>
+          <p className="text-slate-600 dark:text-slate-400 text-base">
             © {new Date().getFullYear()} Epoch
           </p>
         </div>
       </footer>
+
+      {/* Project Drawer */}
+      <ProjectDrawer
+        project={selectedProject}
+        isOpen={isDrawerOpen}
+        onClose={closeDrawer}
+      />
     </main>
   );
 }

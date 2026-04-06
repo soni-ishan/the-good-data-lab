@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
+/* Light Mode (Default) */
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 15, 23, 42; /* Slate 950 */
-  --background-end-rgb: 15, 23, 42;
+  /* Background colors */
+  --background: 255 255 255; /* White */
+  --background-secondary: 248 250 252; /* Slate 50 */
+  --background-tertiary: 241 245 249; /* Slate 100 */
+  
+  /* Foreground/Text colors */
+  --foreground: 15 23 42; /* Slate 900 */
+  --foreground-muted: 71 85 105; /* Slate 600 */
+  --foreground-subtle: 100 116 139; /* Slate 500 */
+  
+  /* Border colors */
+  --border: 226 232 240; /* Slate 200 */
+  --border-strong: 203 213 225; /* Slate 300 */
+  
+  /* Accent colors */
+  --accent-bg: 241 245 249; /* Slate 100 */
+  --accent-hover: 226 232 240; /* Slate 200 */
+  
+  /* Card colors */
+  --card-bg: 255 255 255;
+  --card-border: 226 232 240;
+  
+  /* Code/Terminal colors */
+  --code-bg: 248 250 252;
+  --code-text: 71 85 105;
+}
+
+/* Dark Mode */
+.dark {
+  /* Background colors - Deep, rich grays */
+  --background: 2 6 23; /* Almost black with blue tint */
+  --background-secondary: 15 23 42; /* Slate 950 */
+  --background-tertiary: 30 41 59; /* Slate 800 */
+  
+  /* Foreground/Text colors */
+  --foreground: 248 250 252; /* Slate 50 */
+  --foreground-muted: 148 163 184; /* Slate 400 */
+  --foreground-subtle: 100 116 139; /* Slate 500 */
+  
+  /* Border colors */
+  --border: 51 65 85; /* Slate 700 */
+  --border-strong: 71 85 105; /* Slate 600 */
+  
+  /* Accent colors */
+  --accent-bg: 30 41 59; /* Slate 800 */
+  --accent-hover: 51 65 85; /* Slate 700 */
+  
+  /* Card colors */
+  --card-bg: 15 23 42;
+  --card-border: 51 65 85;
+  
+  /* Code/Terminal colors */
+  --code-bg: 15 23 42;
+  --code-text: 148 163 184;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Grid pattern */
+/* Grid pattern - theme aware */
 .grid-pattern {
   background-image: 
     linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
+}
+
+.dark .grid-pattern {
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
 }
 
 /* Animated gradient orbs */

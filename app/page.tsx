@@ -28,7 +28,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
               <Terminal className="w-8 h-8 text-indigo-400" />
-              <span className="font-bold text-2xl text-slate-100">The Good Data Lab</span>
+              <span className="font-bold text-2xl text-slate-100">Epoch</span>
             </div>
             <div className="hidden md:flex items-center space-x-10">
               <a href="#projects" className="text-lg text-slate-300 hover:text-white transition-colors">Projects</a>
@@ -90,8 +90,9 @@ export default function Home() {
           </h1>
           
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            A chill, beginner-friendly space for undergrads to explore Data Science & AI. 
-            We build projects that do good, share ideas, and learn together.
+            To bridge the gap between academic theory and industry-standard execution.
+            At Epoch, we pick hard problems, build real things, and ship.
+            Each project is an epoch; one full cycle of learning, building, and growing.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -256,7 +257,7 @@ export default function Home() {
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-6">Who We Are</h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              The Good Data Lab was born from a shared realization: the best way to learn Data Science is to build.
+              Epoch was born from a shared realization: the best way to learn Data Science is to build.
               <br /><br />
               We are a collective of four undergraduates who moved beyond the classroom to tackle global challenges from biomass estimation to agentic AI. 
               What started as a simple idea is now a launchpad for innovation, bridging the gap between academic theory and real-world impact.
@@ -306,7 +307,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="text-slate-500 code-bracket text-sm mb-4">{'// end of file'}</div>
           <p className="text-slate-400 text-base">
-            © {new Date().getFullYear()} The Good Data Lab
+            © {new Date().getFullYear()} Epoch
           </p>
         </div>
       </footer>

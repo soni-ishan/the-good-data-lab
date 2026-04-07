@@ -1,31 +1,29 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Github, MessageSquare, Users, Sparkles, Terminal, Linkedin, User, Database } from 'lucide-react';
 import { siteConfig, projects, team } from './data';
 import MobileNav from './components/MobileNav';
 import { ThemeToggle } from './components/ThemeToggle';
 import ProjectDrawer from './components/ProjectDrawer';
 
-// Kaggle icon component
-const KaggleIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.281.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.075.312" />
-  </svg>
-);
-
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openProjectDrawer = (project: typeof projects[0]) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
     setSelectedProject(project);
     setIsDrawerOpen(true);
   };
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
-    setTimeout(() => setSelectedProject(null), 300);
+    timeoutRef.current = setTimeout(() => setSelectedProject(null), 300);
   };
 
   return (
@@ -216,6 +214,7 @@ export default function Home() {
               return (
                 <button
                   key={index}
+                  type="button"
                   onClick={() => openProjectDrawer(project)}
                   className={`group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 ${project.theme.border} transition-all hover:-translate-y-1 text-left w-full cursor-pointer flex flex-col`}
                 >

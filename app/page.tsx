@@ -40,9 +40,9 @@ export default function Home() {
       <div className="fixed bottom-0 left-1/4 w-125 h-125 bg-purple-600/8 dark:bg-purple-600/15 rounded-full blur-[100px] animate-float pointer-events-none" />
 
       {/* Navigation */}
-      <nav className="fixed w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+      <nav className="fixed w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
               <Terminal className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
               <span className="font-bold text-2xl text-slate-900 dark:text-slate-100">Epoch</span>
@@ -70,7 +70,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4">
+      <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 px-4">
         {/* Floating code elements - left side */}
         <div className="absolute left-4 lg:left-16 top-1/4 text-indigo-500/10 dark:text-indigo-500/20 code-bracket text-6xl lg:text-8xl animate-drift pointer-events-none select-none">
           {'</>'}
@@ -107,7 +107,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-700 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Bringing students together to work on projects to bridge the gap between a degree and being actually job-ready, while polishing our portfolios.
             <br /><br />
             We pick hard problems, build real things, and ship. Each project is an epoch — one full cycle of learning, building, and growing.
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Stats / Values */}
-      <section className="py-20 relative" aria-labelledby="values-heading">
+      <section className="py-12 relative" aria-labelledby="values-heading">
         <h2 id="values-heading" className="sr-only">Our Values</h2>
         {/* Data nodes visualization */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -166,27 +166,27 @@ export default function Home() {
               <Users className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">Beginner Friendly</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">No experience? No problem. We learn by doing, together.</p>
+            <p className="text-slate-700 dark:text-slate-400 text-base leading-relaxed">No experience? No problem. We learn by doing, together.</p>
           </div>
           <div className="p-6">
             <div className="bg-cyan-100 dark:bg-cyan-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-cyan-600 dark:text-cyan-400">
               <Database className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">Real Data</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">From Kaggle competitions to geospatial analysis.</p>
+            <p className="text-slate-700 dark:text-slate-400 text-base leading-relaxed">From Kaggle competitions to geospatial analysis.</p>
           </div>
           <div className="p-6">
             <div className="bg-purple-100 dark:bg-purple-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-purple-600 dark:text-purple-400">
               <Sparkles className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">Build & Ship</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">Projects that solve real problems and create real impact.</p>
+            <p className="text-slate-700 dark:text-slate-400 text-base leading-relaxed">Projects that solve real problems and create real impact.</p>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-4 relative">
+      <section id="projects" className="py-12 px-4 relative">
         {/* Decorative terminal window in background */}
         <div className="absolute right-0 top-1/4 w-64 h-48 bg-slate-100 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-800/50 overflow-hidden pointer-events-none opacity-20 dark:opacity-30 hidden xl:block">
           <div className="h-6 bg-slate-200 dark:bg-slate-800/50 flex items-center gap-1.5 px-3">
@@ -203,26 +203,23 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="mb-12">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Featured Projects</h2>
-            <p className="text-slate-600 dark:text-slate-400 mt-2">What we&apos;ve been building</p>
+            <p className="text-slate-700 dark:text-slate-400 mt-2">What we&apos;ve been building</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {projects.map((project, index) => {
               const IconComponent = project.icon;
-              const hasCode = project.links.code;
-              const hasDemo = project.links.demo && project.links.demo !== "#";
-              const hasKaggle = project.links.kaggle;
 
               return (
                 <button
                   key={index}
                   onClick={() => openProjectDrawer(project)}
-                  className={`group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 ${project.theme.border} transition-all hover:-translate-y-1 text-left w-full cursor-pointer`}
+                  className={`group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 ${project.theme.border} transition-all hover:-translate-y-1 text-left w-full cursor-pointer flex flex-col`}
                 >
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex justify-between items-start mb-4 w-full">
                     <div className={`p-3 ${project.theme.bg} rounded-lg ${project.theme.text}`}>
                       <IconComponent className="w-6 h-6" />
                     </div>
@@ -233,31 +230,9 @@ export default function Home() {
                     )}
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{project.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-base mb-6 h-20 leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-400 text-base mb-2 flex-grow leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex gap-3 mt-auto">
-                    {hasCode && (
-                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-slate-200 dark:group-hover:bg-slate-700 text-base font-medium transition-colors">
-                        <Github className="w-5 h-5" /> Code
-                      </span>
-                    )}
-                    {hasDemo && (
-                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-slate-200 dark:group-hover:bg-slate-700 text-base font-medium transition-colors">
-                        <ExternalLink className="w-5 h-5" /> Demo
-                      </span>
-                    )}
-                    {hasKaggle && (
-                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-slate-200 dark:group-hover:bg-slate-700 text-base font-medium transition-colors">
-                        <KaggleIcon className="w-5 h-5" /> Kaggle
-                      </span>
-                    )}
-                    {!hasCode && !hasDemo && !hasKaggle && (
-                      <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-400 dark:text-slate-500 text-base font-medium">
-                        Coming Soon
-                      </span>
-                    )}
-                  </div>
                 </button>
               );
             })}
@@ -267,7 +242,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are & Team Section */}
-      <section id="about" className="py-24 px-4 relative">
+      <section id="about" className="py-12 px-4 relative">
         {/* Code decoration - left */}
         <div className="absolute left-8 top-1/4 text-slate-200 dark:text-slate-800 code-bracket text-4xl pointer-events-none select-none hidden lg:block">
           {'/**'}
@@ -278,8 +253,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Who We Are</h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-              Epoch was born from a shared realization: the best way to learn Data Science is to build.
+            <p className="text-slate-700 dark:text-slate-400 text-lg leading-relaxed">
+              Epoch was born from a shared realization: the best way to learn is to build.
               <br /><br />
               We are a collective of four undergraduates who moved beyond the classroom to tackle global challenges from biomass estimation to agentic AI.
               What started as a simple idea is now a launchpad for innovation, bridging the gap between academic theory and real-world impact.

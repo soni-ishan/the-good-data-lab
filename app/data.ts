@@ -26,7 +26,7 @@ export const projects = [
       text: "text-indigo-400",
       border: "hover:border-indigo-500/50",
       tagBg: "bg-slate-800 dark:bg-slate-800",
-      tagText: "text-slate-400 dark:text-slate-400",
+      tagText: "text-slate-600 dark:text-slate-400",
       tagBorder: "border-transparent"
     }
   },

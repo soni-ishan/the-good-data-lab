@@ -11,7 +11,7 @@
   /* Foreground/Text colors */
   --foreground: 15 23 42; /* Slate 900 */
   --foreground-muted: 71 85 105; /* Slate 600 */
-  --foreground-subtle: 100 116 139; /* Slate 500 */
+  --foreground-subtle: 71 85 105; /* Slate 500 */
   
   /* Border colors */
   --border: 226 232 240; /* Slate 200 */
@@ -40,7 +40,7 @@
   /* Foreground/Text colors */
   --foreground: 248 250 252; /* Slate 50 */
   --foreground-muted: 148 163 184; /* Slate 400 */
-  --foreground-subtle: 100 116 139; /* Slate 500 */
+  --foreground-subtle: 71 85 105; /* Slate 500 */
   
   /* Border colors */
   --border: 51 65 85; /* Slate 700 */

@@ -122,7 +122,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
 
           {/* Short Description */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-2">
               Overview
             </h3>
             <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -132,7 +132,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
 
           {/* Expanded Description */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-2">
               About This Project
             </h3>
             <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -142,7 +142,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
 
           {/* Tech Stack */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-3">
               Tech Stack
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -159,7 +159,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
 
           {/* Architecture */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-2">
               Architecture & Approach
             </h3>
             <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -169,7 +169,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
 
           {/* Challenges */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-2">
               Key Challenges
             </h3>
             <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -179,7 +179,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
 
           {/* Outcomes */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-2">
               Outcomes & Impact
             </h3>
             <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -189,7 +189,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
 
           {/* Links */}
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-3">
               Project Links
             </h3>
             <div className="flex flex-col gap-3">
@@ -224,7 +224,7 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
                 </a>
               )}
               {!hasCode && !hasDemo && !hasKaggle && (
-                <div className="text-center py-3 px-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400">
+                <div className="text-center py-3 px-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-700 dark:text-slate-400">
                   Links coming soon...
                 </div>
               )}

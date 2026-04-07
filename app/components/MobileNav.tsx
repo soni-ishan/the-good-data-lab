@@ -28,7 +28,7 @@ export default function MobileNav() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="absolute top-20 left-0 right-0 md:hidden border-t border-slate-200 dark:border-slate-800 py-4 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md">
+        <div className="absolute top-16 left-0 right-0 md:hidden border-t border-slate-200/50 dark:border-slate-800/50 py-4 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md">
           <div className="flex flex-col space-y-4 px-6">
             <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">About</a>

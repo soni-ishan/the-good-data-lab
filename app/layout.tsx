@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     title: "Epoch",
     description: "Bringing students together to bridge the gap between a degree and being job-ready.",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+  ],
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({

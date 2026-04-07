@@ -7,8 +7,11 @@ export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Wait until mounted on client
-  useEffect(() => setMounted(true), []);
+  // Wait until mounted on client to avoid hydration mismatch
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   if (!mounted) return <div className="w-8 h-8" />; // Invisible placeholder to prevent layout shift
 

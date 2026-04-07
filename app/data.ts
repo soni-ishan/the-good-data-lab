@@ -23,11 +23,11 @@ export const projects = [
     icon: Database,
     theme: {
       bg: "bg-indigo-500/10",
-      text: "text-indigo-400",
+      text: "text-indigo-600 dark:text-indigo-400",
       border: "hover:border-indigo-500/50",
-      tagBg: "bg-slate-800 dark:bg-slate-800",
-      tagText: "text-slate-600 dark:text-slate-400",
-      tagBorder: "border-transparent"
+      tagBg: "bg-slate-100 dark:bg-slate-800",
+      tagText: "text-slate-700 dark:text-slate-400",
+      tagBorder: "border-slate-200 dark:border-transparent"
     }
   },
   {
@@ -48,11 +48,11 @@ export const projects = [
     icon: Code2,
     theme: {
       bg: "bg-green-500/10",
-      text: "text-green-400",
+      text: "text-green-600 dark:text-green-400",
       border: "hover:border-green-500/50",
-      tagBg: "bg-green-900/30 dark:bg-green-900/30",
-      tagText: "text-green-300 dark:text-green-300",
-      tagBorder: "border-green-800"
+      tagBg: "bg-green-100 dark:bg-green-900/30",
+      tagText: "text-green-700 dark:text-green-300",
+      tagBorder: "border-green-200 dark:border-green-800"
     }
   },
   {
@@ -73,11 +73,11 @@ export const projects = [
     icon: Terminal,
     theme: {
       bg: "bg-blue-500/10",
-      text: "text-blue-400",
+      text: "text-blue-600 dark:text-blue-400",
       border: "hover:border-blue-500/50",
-      tagBg: "bg-blue-900/30 dark:bg-blue-900/30",
-      tagText: "text-blue-300 dark:text-blue-300",
-      tagBorder: "border-blue-800"
+      tagBg: "bg-blue-100 dark:bg-blue-900/30",
+      tagText: "text-blue-700 dark:text-blue-300",
+      tagBorder: "border-blue-200 dark:border-blue-800"
     }
   }
 ];
@@ -92,7 +92,7 @@ export const team = [
     },
     theme: {
       bg: "bg-indigo-500/10",
-      text: "text-indigo-400",
+      text: "text-indigo-600 dark:text-indigo-400",
       border: "hover:border-indigo-500/30"
     }
   },
@@ -105,7 +105,7 @@ export const team = [
     },
     theme: {
       bg: "bg-purple-500/10",
-      text: "text-purple-400",
+      text: "text-purple-600 dark:text-purple-400",
       border: "hover:border-purple-500/30"
     }
   },
@@ -118,7 +118,7 @@ export const team = [
     },
     theme: {
       bg: "bg-cyan-500/10",
-      text: "text-cyan-400",
+      text: "text-cyan-600 dark:text-cyan-400",
       border: "hover:border-cyan-500/30"
     }
   },
@@ -131,7 +131,7 @@ export const team = [
     },
     theme: {
       bg: "bg-emerald-500/10",
-      text: "text-emerald-400",
+      text: "text-emerald-600 dark:text-emerald-400",
       border: "hover:border-emerald-500/30"
     }
   }

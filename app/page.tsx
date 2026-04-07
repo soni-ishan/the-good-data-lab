@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Github, MessageSquare, ExternalLink, Users, Sparkles, Terminal, Linkedin, User, Database } from 'lucide-react';
 import { siteConfig, projects, team } from './data';
 import MobileNav from './components/MobileNav';
-import ThemeToggle from './components/ThemeToggle';
+import { ThemeToggle } from './components/ThemeToggle';
 import ProjectDrawer from './components/ProjectDrawer';
 
 // Kaggle icon component
@@ -30,15 +30,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-200 selection:bg-indigo-500/30 overflow-x-hidden transition-colors">
-      
+
       {/* Global background elements */}
       <div className="fixed inset-0 grid-pattern pointer-events-none" />
-      
+
       {/* Gradient orbs - positioned throughout the page */}
       <div className="fixed top-0 left-0 w-200 h-200 bg-indigo-600/10 dark:bg-indigo-600/20 rounded-full blur-[120px] animate-float pointer-events-none" style={{ transform: 'translate(-30%, -30%)' }} />
       <div className="fixed top-1/3 right-0 w-150 h-150 bg-cyan-500/8 dark:bg-cyan-500/15 rounded-full blur-[100px] animate-float-delayed pointer-events-none" style={{ transform: 'translate(30%, 0)' }} />
       <div className="fixed bottom-0 left-1/4 w-125 h-125 bg-purple-600/8 dark:bg-purple-600/15 rounded-full blur-[100px] animate-float pointer-events-none" />
-      
+
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
@@ -52,7 +52,7 @@ export default function Home() {
               <a href="#about" className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
               <a href="#team" className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Team</a>
               <ThemeToggle />
-              <a 
+              <a
                 href={siteConfig.discord}
                 target="_blank"
                 rel="noreferrer"
@@ -63,7 +63,7 @@ export default function Home() {
                 Join Discord
               </a>
             </div>
-            
+
             <MobileNav />
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="absolute left-8 lg:left-32 top-2/3 text-cyan-500/10 dark:text-cyan-500/15 code-bracket text-4xl lg:text-6xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-2s' }}>
           {'{ }'}
         </div>
-        
+
         {/* Floating code elements - right side */}
         <div className="absolute right-4 lg:right-16 top-1/3 text-purple-500/10 dark:text-purple-500/20 code-bracket text-5xl lg:text-7xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-3s' }}>
           {'( )'}
@@ -86,11 +86,11 @@ export default function Home() {
         <div className="absolute right-8 lg:right-28 top-3/4 text-indigo-500/10 dark:text-indigo-500/15 code-bracket text-3xl lg:text-5xl animate-drift pointer-events-none select-none" style={{ animationDelay: '-1s' }}>
           {'[ ]'}
         </div>
-        
+
         {/* Data flow lines */}
         <div className="absolute left-1/4 top-20 bottom-20 w-px bg-linear-to-b from-transparent via-indigo-500/10 dark:via-indigo-500/20 to-transparent pointer-events-none hidden lg:block" />
         <div className="absolute right-1/4 top-32 bottom-32 w-px bg-linear-to-b from-transparent via-cyan-500/10 dark:via-cyan-500/20 to-transparent pointer-events-none hidden lg:block" />
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 border border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-sm mb-6">
             <span className="relative flex h-2 w-2">
@@ -99,22 +99,22 @@ export default function Home() {
             </span>
             Accepting new members
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
             Code. Data. <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 dark:from-indigo-400 to-cyan-600 dark:to-cyan-400">
               Community.
             </span>
           </h1>
-          
+
           <p className="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Bringing students together to work on projects to bridge the gap between a degree and being actually job-ready, while polishing our portfolios.
             <br /><br />
             We pick hard problems, build real things, and ship. Each project is an epoch — one full cycle of learning, building, and growing.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
+            <a
               href={siteConfig.discord}
               target="_blank"
               rel="noreferrer"
@@ -124,8 +124,8 @@ export default function Home() {
               <MessageSquare className="w-6 h-6" aria-hidden="true" />
               Join the Server
             </a>
-            <a 
-              href="#projects" 
+            <a
+              href="#projects"
               className="w-full sm:w-auto px-10 py-4 bg-slate-200 dark:bg-slate-800/80 text-slate-900 dark:text-white rounded-xl text-lg font-semibold hover:bg-slate-300 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-600 transition-all hover:scale-105"
             >
               See Our Work
@@ -159,7 +159,7 @@ export default function Home() {
             </defs>
           </svg>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 text-center relative z-10">
           <div className="p-6">
             <div className="bg-indigo-100 dark:bg-indigo-500/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5 text-indigo-600 dark:text-indigo-400">
@@ -201,7 +201,7 @@ export default function Home() {
             <div className="text-slate-400 dark:text-slate-500/50">━━━━━━━━ 45%</div>
           </div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Featured Projects</h2>
@@ -209,13 +209,13 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
+
             {projects.map((project, index) => {
               const IconComponent = project.icon;
               const hasCode = project.links.code;
               const hasDemo = project.links.demo && project.links.demo !== "#";
               const hasKaggle = project.links.kaggle;
-              
+
               return (
                 <button
                   key={index}
@@ -281,7 +281,7 @@ export default function Home() {
             <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
               Epoch was born from a shared realization: the best way to learn Data Science is to build.
               <br /><br />
-              We are a collective of four undergraduates who moved beyond the classroom to tackle global challenges from biomass estimation to agentic AI. 
+              We are a collective of four undergraduates who moved beyond the classroom to tackle global challenges from biomass estimation to agentic AI.
               What started as a simple idea is now a launchpad for innovation, bridging the gap between academic theory and real-world impact.
             </p>
           </div>
@@ -325,7 +325,7 @@ export default function Home() {
       <footer className="py-16 relative">
         {/* Gradient line */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-linear-to-r from-transparent via-indigo-500/30 dark:via-indigo-500/50 to-transparent" />
-        
+
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="text-slate-400 dark:text-slate-500 code-bracket text-sm mb-4">{'// end of file'}</div>
           <p className="text-slate-600 dark:text-slate-400 text-base">

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { MessageSquare, Menu, X } from 'lucide-react';
 import { siteConfig } from '../data';
-import ThemeToggle from './ThemeToggle';
+import { ThemeToggle } from './ThemeToggle';
 
 export default function MobileNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function MobileNav() {
             <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
             <a href="#team" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Team</a>
-            <a 
+            <a
               href={siteConfig.discord}
               target="_blank"
               rel="noreferrer"

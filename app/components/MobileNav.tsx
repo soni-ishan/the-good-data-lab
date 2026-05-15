@@ -1,8 +1,9 @@
 ﻿"use client";
 
-import { useState } from 'react';
-import { MessageSquare, Menu, X } from 'lucide-react';
-import { siteConfig } from '../data';
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, MessageSquare, X } from "lucide-react";
+import { siteConfig } from "../data";
 
 export default function MobileNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function MobileNav() {
     <>
       <button
         type="button"
-        className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+        className="rounded-lg p-2 text-stone-300 transition-colors hover:text-amber-100 md:hidden"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={mobileMenuOpen}
@@ -24,16 +25,23 @@ export default function MobileNav() {
       </button>
 
       {mobileMenuOpen && (
-        <div className="absolute top-20 left-0 right-0 md:hidden border-t border-slate-800 py-4 bg-slate-950/95 backdrop-blur-md">
-          <div className="flex flex-col space-y-4 px-6">
-            <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">Projects</a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">About</a>
-            <a href="#team" onClick={() => setMobileMenuOpen(false)} className="text-lg text-slate-300 hover:text-white transition-colors">Team</a>
+        <div className="absolute left-0 right-0 top-20 border-t border-amber-200/10 bg-[#120f0c]/95 py-4 backdrop-blur md:hidden">
+          <div className="flex flex-col space-y-3 px-6">
+            {siteConfig.navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-[0.12em] text-stone-300 transition-colors hover:bg-amber-300/10 hover:text-amber-100"
+              >
+                {item.label}
+              </Link>
+            ))}
             <a 
               href={siteConfig.discord}
               target="_blank"
               rel="noreferrer"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-amber-100 transition hover:bg-amber-300/25"
             >
               <MessageSquare className="w-5 h-5" aria-hidden="true" />
               Join Discord

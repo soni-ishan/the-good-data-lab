@@ -1,18 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 15, 23, 42; /* Slate 950 */
-  --background-end-rgb: 15, 23, 42;
+  --foreground-rgb: 245, 245, 244;
+  --background-start-rgb: 15, 11, 8;
+  --background-end-rgb: 26, 18, 12;
 }
 
 body {
+  font-family: var(--font-space-grotesk), sans-serif;
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  background: linear-gradient(
+    180deg,
+    rgb(var(--background-end-rgb)) 0%,
+    rgb(var(--background-start-rgb)) 60%
+  );
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+code,
+pre {
+  font-family: var(--font-source-code-pro), monospace;
 }
 
 /* Grid pattern */
@@ -67,6 +83,6 @@ html {
 
 /* Code bracket styling */
 .code-bracket {
-  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-family: var(--font-source-code-pro), monospace;
   font-weight: 300;
 }

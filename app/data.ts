@@ -1,11 +1,9 @@
-import { Code2, Database, Terminal } from "lucide-react";
-
 export type Contributor = {
   id: string;
   name: string;
   role: string;
-  bio: string;
   avatarInitials: string;
+  profileImage?: string;
   links: {
     linkedin?: string;
     github?: string;
@@ -31,13 +29,13 @@ export type Project = {
   publishedAt: string;
   category: string;
   readTime: string;
+  logoImage: string;
   heroImage: string;
   links: {
     code?: string;
     demo?: string;
     kaggle?: string;
   };
-  icon: typeof Database;
   theme: {
     bg: string;
     text: string;
@@ -66,7 +64,8 @@ export const siteConfig = {
     { label: "Home", href: "/#home" },
     { label: "Projects", href: "/#projects" },
     { label: "Contributors", href: "/#contributors" },
-    { label: "About", href: "/#about" }
+    { label: "About", href: "/#about" },
+    { label: "Contact", href: "/contact" }
   ]
 };
 
@@ -75,8 +74,8 @@ export const contributors: Contributor[] = [
     id: "gurinayat-mangat",
     name: "Gurinayat Mangat",
     role: "Founder",
-    bio: "Leads project strategy, mentors newcomers, and keeps the team focused on measurable outcomes.",
     avatarInitials: "GM",
+    profileImage: "/contributors/gurinayat-mangat.jpg",
     links: {
       linkedin: "https://www.linkedin.com/in/gurinayat-mangat/",
       github: "https://github.com/gkm2004"
@@ -86,8 +85,8 @@ export const contributors: Contributor[] = [
     id: "favour-ejike",
     name: "Favour Ejike",
     role: "Core Member",
-    bio: "Builds model pipelines and helps turn rough ideas into working prototypes quickly.",
     avatarInitials: "FE",
+    profileImage: "/contributors/favour-ejike.png",
     links: {
       linkedin: "https://ca.linkedin.com/in/favour-ejike-3a0a09278",
       github: "https://github.com/Amachivine"
@@ -97,19 +96,19 @@ export const contributors: Contributor[] = [
     id: "ishan-soni",
     name: "Ishan Soni",
     role: "Core Member",
-    bio: "Owns experimentation and evaluation, with a strong focus on reproducibility.",
     avatarInitials: "IS",
+    profileImage: "/contributors/ishan-soni.jpg",
     links: {
       linkedin: "https://linkedin.com/in/soni-ishan",
       github: "https://github.com/soni-ishan"
     }
   },
   {
-    id: "simarpreet-singh-purba",
-    name: "Simarpreet Singh Purba",
+    id: "simarpreet-purba",
+    name: "Simarpreet Purba",
     role: "Core Member",
-    bio: "Drives full-stack delivery and deployment for products the team can demo publicly.",
     avatarInitials: "SP",
+    profileImage: "/contributors/simarpreet-purba.jpg",
     links: {
       linkedin: "https://linkedin.com/in/simarpreet-singh-purba-759113289/",
       github: "https://github.com/simarpreet0037"
@@ -124,27 +123,27 @@ export const projects: Project[] = [
     shortDescription:
       "A specialized chatbot for university CS students powered by a Neo4j knowledge graph.",
     status: "Completed",
-    publishedAt: "2026-03-14",
+    publishedAt: "2025-12-15",
     category: "LLM Systems",
     readTime: "6 min read",
-    heroImage: "/projects/course-compass.svg",
+    logoImage: "/projects/course-compass/logo.png",
+    heroImage: "/projects/course-compass/hero.svg",
     links: {
       code: "https://github.com/simarpreet0037/CourseCompass",
       demo: "http://ec2-34-227-86-112.compute-1.amazonaws.com"
     },
-    icon: Database,
     theme: {
-      bg: "bg-amber-500/10",
-      text: "text-amber-300",
-      border: "hover:border-amber-400/50",
-      tagBg: "bg-amber-950/60",
-      tagText: "text-amber-200",
-      tagBorder: "border-amber-700/40"
+      bg: "bg-emerald-500/10",
+      text: "text-emerald-300",
+      border: "hover:border-emerald-400/50",
+      tagBg: "bg-emerald-950/60",
+      tagText: "text-emerald-200",
+      tagBorder: "border-emerald-700/40"
     },
     contributors: ["gurinayat-mangat",
       "favour-ejike",
       "ishan-soni",
-      "simarpreet-singh-purba"],
+      "simarpreet-purba"],
     article: {
       intro:
         "Course Compass started as a frustration: students were spending more time searching for course advice than actually learning. We designed a graph-backed assistant that returns grounded answers instead of generic LLM output.",
@@ -157,7 +156,7 @@ export const projects: Project[] = [
             "Our goal was to build a dependable assistant that references structured relationships between courses."
           ],
           image: {
-            src: "/projects/course-compass-graph.svg",
+            src: "/projects/course-compass/graph.svg",
             alt: "Knowledge graph representation of university courses and prerequisites",
             caption: "Course relationships modeled in a graph to support retrieval with traceable context."
           }
@@ -170,7 +169,7 @@ export const projects: Project[] = [
             "The UI highlights why an answer was produced, giving users confidence in recommendations."
           ],
           image: {
-            src: "/projects/course-compass-ui.svg",
+            src: "/projects/course-compass/ui.svg",
             alt: "Application interface showing a chat assistant and supporting citations",
             caption: "The assistant response panel includes contextual evidence and actionable recommendations."
           }
@@ -197,12 +196,12 @@ export const projects: Project[] = [
     publishedAt: "2026-01-28",
     category: "Computer Vision",
     readTime: "7 min read",
-    heroImage: "/projects/csiro-biomass.svg",
+    logoImage: "/projects/csiro-image2biomass/logo.png",
+    heroImage: "/projects/csiro-image2biomass/hero.svg",
     links: {
       kaggle:
         "https://www.kaggle.com/competitions/csiro-biomass/leaderboard?search=The+Good+Data+Lab"
     },
-    icon: Code2,
     theme: {
       bg: "bg-emerald-500/10",
       text: "text-emerald-300",
@@ -214,7 +213,7 @@ export const projects: Project[] = [
     contributors: ["gurinayat-mangat",
       "favour-ejike",
       "ishan-soni",
-      "simarpreet-singh-purba"],
+      "simarpreet-purba"],
     article: {
       intro:
         "This project explored whether deep vision models could reliably estimate biomass from satellite imagery across varied terrain and lighting conditions.",
@@ -227,7 +226,7 @@ export const projects: Project[] = [
             "We framed this as a robust regression task with strong data augmentation."
           ],
           image: {
-            src: "/projects/csiro-data.svg",
+            src: "/projects/csiro-image2biomass/data.svg",
             alt: "Satellite tiles sampled for biomass prediction",
             caption: "Representative satellite tiles used as input for the biomass estimation pipeline."
           }
@@ -240,7 +239,7 @@ export const projects: Project[] = [
             "Error analysis on biome slices informed targeted augmentation improvements."
           ],
           image: {
-            src: "/projects/csiro-model.svg",
+            src: "/projects/csiro-image2biomass/model.svg",
             alt: "Neural network training and validation workflow",
             caption: "A reproducible training workflow with fold-level validation and tracking."
           }
@@ -267,25 +266,25 @@ export const projects: Project[] = [
     publishedAt: "2026-05-01",
     category: "Hackathon",
     readTime: "5 min read",
-    heroImage: "/projects/ai-dev-days.svg",
+    logoImage: "/projects/microsoft-ai-dev-days/logo.svg",
+    heroImage: "/projects/microsoft-ai-dev-days/hero.svg",
     links: {
       code: "https://github.com/soni-ishan/PRism/",
       demo: "https://www.youtube.com/watch?v=3jAxC7I3zYk"
     },
-    icon: Terminal,
     theme: {
-      bg: "bg-sky-500/10",
-      text: "text-sky-300",
-      border: "hover:border-sky-400/50",
-      tagBg: "bg-sky-950/60",
-      tagText: "text-sky-200",
-      tagBorder: "border-sky-700/40"
+      bg: "bg-emerald-500/10",
+      text: "text-emerald-300",
+      border: "hover:border-emerald-400/50",
+      tagBg: "bg-emerald-950/60",
+      tagText: "text-emerald-200",
+      tagBorder: "border-emerald-700/40"
     },
     contributors: [
       "gurinayat-mangat",
       "favour-ejike",
       "ishan-soni",
-      "simarpreet-singh-purba"
+      "simarpreet-purba"
     ],
     article: {
       intro:
@@ -300,7 +299,7 @@ export const projects: Project[] = [
             "We ship two experiences: a GitHub Actions workflow that gates deployments automatically, and a VS Code extension so developers see the Deployment Confidence Score directly in their sidebar while coding."
           ],
             image: {
-              src: "/projects/devdays-score.jpeg",
+              src: "/projects/microsoft-ai-dev-days/score.jpeg",
             alt: "PRism deployment confidence scoring concept",
             caption: "The problem: traditional CI gates miss the human and operational context needed for truly safe releases."
           }
@@ -314,7 +313,7 @@ export const projects: Project[] = [
             "A Verdict Agent aggregates weighted signals and produces the Deployment Confidence Score, risk brief, and rollback playbook. Low-score pull requests are blocked by default until risk is reduced or a maintainer explicitly overrides."
           ],
           image: {
-            src: "/projects/devdays-demo.svg",
+            src: "/projects/microsoft-ai-dev-days/demo.svg",
             alt: "PRism demo flow with score output and risk summary for pull requests",
             caption: "The live demo showed end-to-end gating: parallel agent analysis, confidence scoring, and actionable mitigation in the PR thread."
           }

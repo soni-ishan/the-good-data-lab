@@ -23,3 +23,18 @@ A student-run collective tackling real-world challenges through data science and
 | Favour Ejike | Core Member | [@Amachivine](https://github.com/Amachivine) |
 | Ishan Soni | Core Member | [@soni-ishan](https://github.com/soni-ishan) |
 | Simarpreet Singh Purba | Core Member | [@simarpreet0037](https://github.com/simarpreet0037) |
+
+## Contact Form Setup
+
+The contact page sends messages through SMTP using the `/api/contact` route. Copy `.env.example` to `.env.local` and set these values:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `CONTACT_TO_EMAIL`
+- `CONTACT_FROM_EMAIL`
+
+By default, the recipient inbox is `epoch.outreach@gmail.com`.
+
+Once those are set, the contact form at `/contact` will send messages to your inbox.

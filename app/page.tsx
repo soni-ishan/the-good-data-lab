@@ -1,28 +1,37 @@
 import Link from "next/link";
-import { ArrowRight, Database, ExternalLink, Github, Linkedin, Sparkles, Users } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ExternalLink, Github, Sparkles } from "lucide-react";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
+import ContributorCard from "./components/ContributorCard";
 import { contributors, projects, siteConfig } from "./data";
 
-const highlightedProjects = projects.slice(0, 3);
+const projectOrder = new Map([
+  ["microsoft-ai-dev-days", 0],
+  ["csiro-image2biomass", 1],
+  ["course-compass", 2]
+]);
+
+const orderedProjects = [...projects].sort(
+  (a, b) =>
+    (projectOrder.get(a.slug) ?? Number.MAX_SAFE_INTEGER) -
+    (projectOrder.get(b.slug) ?? Number.MAX_SAFE_INTEGER)
+);
 
 export default function Home() {
   return (
-    <main id="home" className="min-h-screen overflow-x-hidden bg-[#0f0b08] text-stone-100 selection:bg-amber-400/30">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(251,191,36,0.18),transparent_45%),radial-gradient(circle_at_80%_20%,rgba(245,158,11,0.15),transparent_40%),linear-gradient(180deg,#1a120c_0%,#0f0b08_60%)]" />
+    <main id="home" className="min-h-screen overflow-x-hidden bg-[#06130e] text-stone-100 selection:bg-emerald-400/30">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(110,231,183,0.22),transparent_45%),radial-gradient(circle_at_80%_20%,rgba(52,211,153,0.18),transparent_40%),linear-gradient(180deg,#0a1f17_0%,#06130e_60%)]" />
       <SiteHeader />
 
       <section className="relative px-6 pb-20 pt-16 sm:px-8 lg:px-10 lg:pb-28 lg:pt-24">
         <div className="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200/30 bg-amber-200/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-amber-100">
-              Student-led data and AI collective
-            </p>
             <h1 className="text-4xl font-black uppercase leading-tight text-stone-50 sm:text-5xl lg:text-7xl">
               Every project is an
-              <span className="block text-amber-300">epoch</span>
+              <span className="block text-emerald-300">epoch</span>
             </h1>
-            <p className="mt-5 text-base font-medium uppercase tracking-[0.18em] text-amber-400/80">
+            <p className="mt-5 text-base font-medium uppercase tracking-[0.18em] text-emerald-400/80">
               One full cycle of learning, building, and growing.
             </p>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone-300">
@@ -32,7 +41,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-300 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#261a0f] transition hover:bg-amber-200"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-300 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#052016] transition hover:bg-emerald-200"
               >
                 Browse projects
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -41,7 +50,7 @@ export default function Home() {
                 href={siteConfig.discord}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-amber-200/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-amber-100 transition hover:bg-amber-200/10"
+                className="inline-flex items-center justify-center rounded-xl border border-emerald-200/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-emerald-100 transition hover:bg-emerald-200/10"
               >
                 Join Discord
               </a>
@@ -49,62 +58,78 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4">
-            {highlightedProjects.map((project) => {
-              const Icon = project.icon;
-              return (
-                <article
-                  key={project.slug}
-                  className={`rounded-2xl border border-amber-200/15 bg-[#1a130d]/85 p-5 transition ${project.theme.border}`}
-                >
-                  <div className="mb-4 flex items-center justify-between">
-                    <div className={`rounded-lg p-2 ${project.theme.bg} ${project.theme.text}`}>
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </div>
-                    <span className={`rounded-full border px-3 py-1 text-xs ${project.theme.tagBg} ${project.theme.tagText} ${project.theme.tagBorder}`}>
-                      {project.status ?? project.rank}
-                    </span>
-                  </div>
-                  <h2 className="text-xl font-bold text-stone-100">{project.title}</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-stone-300">{project.shortDescription}</p>
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-200 transition hover:text-amber-100"
-                  >
-                    Read project article
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </article>
-              );
-            })}
+            <article className="rounded-2xl border border-emerald-200/15 bg-[#0b2118]/85 p-6">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="rounded-xl bg-emerald-300/10 p-3 text-emerald-200">
+                  <Sparkles className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <span className="rounded-full border border-emerald-300/35 bg-emerald-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-100">
+                  Upcoming
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold text-stone-100">New project coming soon</h2>
+              <p className="mt-2 text-sm leading-relaxed text-stone-300">
+                We are currently scoping our next project. We will share details here once everything is ready.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-emerald-200/15 bg-[#0b2118]/85 p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/80">Get involved</p>
+              <h2 className="mt-2 text-xl font-bold text-stone-100">Want to build with us?</h2>
+              <p className="mt-2 text-sm leading-relaxed text-stone-300">
+                We are students learning by building together. If you are into data, AI, or coding and want teammates to
+                build with, join us on Discord and jump into the next project.
+              </p>
+              <a
+                href={siteConfig.discord}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-emerald-300 px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-[#052016] transition hover:bg-emerald-200"
+              >
+                Join the community
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </article>
           </div>
         </div>
       </section>
 
-      <section className="relative px-6 pb-20 sm:px-8 lg:px-10" aria-labelledby="why-heading">
-        <div className="mx-auto w-full max-w-7xl rounded-3xl border border-amber-200/10 bg-[#1a130d]/70 p-8 lg:p-12">
-          <h2 id="why-heading" className="text-2xl font-bold uppercase tracking-[0.08em] text-amber-100">
-            What we focus on
+      <section id="about" className="relative scroll-mt-28 px-6 pb-20 sm:px-8 lg:px-10" aria-labelledby="about-heading">
+        <div className="mx-auto w-full max-w-7xl rounded-3xl border border-emerald-200/10 bg-[#0b2118]/70 p-8 lg:p-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/80">About</p>
+          <h2 id="about-heading" className="mt-3 text-3xl font-black uppercase text-stone-50 sm:text-5xl">
+            From classroom to real-world delivery
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <div className="rounded-xl border border-amber-200/10 bg-black/10 p-5">
-              <Users className="h-6 w-6 text-amber-200" aria-hidden="true" />
-              <h3 className="mt-4 text-lg font-semibold text-stone-100">Collaborative learning</h3>
-              <p className="mt-2 text-sm text-stone-300">
-                We work in small teams, mentor one another, and build confidence through hands-on projects.
+          <p className="mt-6 max-w-4xl text-base leading-relaxed text-stone-300">
+            Epoch is a student-run data and AI initiative built around one principle: practical work creates deep learning.
+            We pick meaningful problems, build prototypes, and document tradeoffs clearly so every project is useful and
+            reproducible.
+          </p>
+
+          <div className="mt-10 rounded-2xl border border-emerald-200/10 bg-black/10 p-6 sm:p-7">
+            <h3 className="text-2xl font-bold uppercase tracking-[0.08em] text-emerald-100">What we focus on</h3>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-stone-300">
+              We emphasize structured collaboration, strong engineering practices, and thoughtful experimentation so members gain experience working through real technical decisions, iterating on ideas, and turning concepts into well-documented, reliable systems.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-xl border border-emerald-200/10 bg-black/10 p-5">
+              <h3 className="text-lg font-bold text-emerald-100">Learn by shipping</h3>
+              <p className="mt-2 text-sm leading-relaxed text-stone-300">
+                We focus on execution from day one so newcomers build practical engineering confidence.
               </p>
             </div>
-            <div className="rounded-xl border border-amber-200/10 bg-black/10 p-5">
-              <Database className="h-6 w-6 text-amber-200" aria-hidden="true" />
-              <h3 className="mt-4 text-lg font-semibold text-stone-100">Real-world data work</h3>
-              <p className="mt-2 text-sm text-stone-300">
-                Our projects combine modeling, engineering, and communication around real datasets.
+            <div className="rounded-xl border border-emerald-200/10 bg-black/10 p-5">
+              <h3 className="text-lg font-bold text-emerald-100">Document the process</h3>
+              <p className="mt-2 text-sm leading-relaxed text-stone-300">
+                Project articles capture architecture decisions, results, and what we would improve next.
               </p>
             </div>
-            <div className="rounded-xl border border-amber-200/10 bg-black/10 p-5">
-              <Sparkles className="h-6 w-6 text-amber-200" aria-hidden="true" />
-              <h3 className="mt-4 text-lg font-semibold text-stone-100">Clear project storytelling</h3>
-              <p className="mt-2 text-sm text-stone-300">
-                We document goals, methods, outcomes, and next steps for every major project.
+            <div className="rounded-xl border border-emerald-200/10 bg-black/10 p-5">
+              <h3 className="text-lg font-bold text-emerald-100">Sustainable workflow</h3>
+              <p className="mt-2 text-sm leading-relaxed text-stone-300">
+                We use a lightweight workflow that makes project updates simple, fast, and consistent.
               </p>
             </div>
           </div>
@@ -113,23 +138,32 @@ export default function Home() {
 
       <section id="projects" className="relative scroll-mt-28 px-6 pb-24 sm:px-8 lg:px-10">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">Projects</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/80">Projects</p>
           <h2 className="mt-3 text-3xl font-black uppercase text-stone-50 sm:text-5xl">Build logs and outcomes</h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-stone-300">
             Explore current and past work, including project summaries, technical decisions, and results.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {projects.map((project) => {
-              const Icon = project.icon;
+            {orderedProjects.map((project) => {
               return (
                 <article
                   key={project.slug}
-                  className={`rounded-2xl border border-amber-200/15 bg-[#1a130d]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
+                  className={`rounded-2xl border border-emerald-200/15 bg-[#0b2118]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
                 >
                   <div className="flex items-center justify-between">
-                    <div className={`rounded-xl p-3 ${project.theme.bg} ${project.theme.text}`}>
-                      <Icon className="h-6 w-6" aria-hidden="true" />
+                    <div
+                      className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-emerald-200/25 p-2 ${
+                        project.links.kaggle ? "bg-white" : "bg-[#081a13]"
+                      }`}
+                    >
+                      <Image
+                        src={project.logoImage}
+                        alt={`${project.title} logo`}
+                        width={48}
+                        height={48}
+                        className="h-10 w-10 object-contain"
+                      />
                     </div>
                     <span className={`rounded-full border px-3 py-1 text-xs ${project.theme.tagBg} ${project.theme.tagText} ${project.theme.tagBorder}`}>
                       {project.status ?? project.rank}
@@ -147,7 +181,7 @@ export default function Home() {
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="inline-flex items-center gap-2 rounded-lg bg-amber-300 px-4 py-2 text-sm font-semibold text-[#261a0f] transition hover:bg-amber-200"
+                      className="inline-flex items-center gap-2 rounded-lg bg-emerald-300 px-4 py-2 text-sm font-semibold text-[#052016] transition hover:bg-emerald-200"
                     >
                       Read article
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -157,7 +191,7 @@ export default function Home() {
                         href={project.links.code}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-amber-200/30 px-4 py-2 text-sm text-amber-100 transition hover:bg-amber-200/10"
+                        className="inline-flex items-center gap-2 rounded-lg border border-emerald-200/30 px-4 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200/10"
                       >
                         <Github className="h-4 w-4" aria-hidden="true" />
                         Code
@@ -168,7 +202,7 @@ export default function Home() {
                         href={project.links.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-amber-200/30 px-4 py-2 text-sm text-amber-100 transition hover:bg-amber-200/10"
+                        className="inline-flex items-center gap-2 rounded-lg border border-emerald-200/30 px-4 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200/10"
                       >
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         Demo
@@ -179,7 +213,7 @@ export default function Home() {
                         href={project.links.kaggle}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-amber-200/30 px-4 py-2 text-sm text-amber-100 transition hover:bg-amber-200/10"
+                        className="inline-flex items-center gap-2 rounded-lg border border-emerald-200/30 px-4 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200/10"
                       >
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         Kaggle
@@ -195,79 +229,13 @@ export default function Home() {
 
       <section id="contributors" className="relative scroll-mt-28 px-6 pb-24 sm:px-8 lg:px-10">
         <div className="mx-auto w-full max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">Contributors</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/80">Contributors</p>
           <h2 className="mt-3 text-3xl font-black uppercase text-stone-50 sm:text-5xl">People behind the builds</h2>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-stone-300">
-            Meet the contributors who lead research, engineering, and product execution across our projects.
-          </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {contributors.map((contributor) => (
-              <article key={contributor.id} className="rounded-2xl border border-amber-200/15 bg-[#1a130d]/80 p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-300/20 text-sm font-bold text-amber-100">
-                  {contributor.avatarInitials}
-                </div>
-                <h3 className="mt-4 text-lg font-bold text-stone-100">{contributor.name}</h3>
-                <p className="mt-1 text-sm font-medium text-amber-200">{contributor.role}</p>
-                <p className="mt-4 text-sm leading-relaxed text-stone-300">{contributor.bio}</p>
-                <div className="mt-4 flex items-center gap-4">
-                  {contributor.links.linkedin ? (
-                    <a
-                      href={contributor.links.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-stone-200 transition hover:text-amber-100"
-                    >
-                      <Linkedin className="h-4 w-4" aria-hidden="true" />
-                      LinkedIn
-                    </a>
-                  ) : null}
-                  {contributor.links.github ? (
-                    <a
-                      href={contributor.links.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-stone-200 transition hover:text-amber-100"
-                    >
-                      <Github className="h-4 w-4" aria-hidden="true" />
-                      GitHub
-                    </a>
-                  ) : null}
-                </div>
-              </article>
+              <ContributorCard key={contributor.id} contributor={contributor} variant="compact" />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="relative scroll-mt-28 px-6 pb-24 sm:px-8 lg:px-10">
-        <div className="mx-auto w-full max-w-7xl rounded-3xl border border-amber-200/10 bg-[#1a130d]/70 p-8 lg:p-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">About</p>
-          <h2 className="mt-3 text-3xl font-black uppercase text-stone-50 sm:text-5xl">From classroom to delivery</h2>
-          <p className="mt-6 max-w-4xl text-base leading-relaxed text-stone-300">
-            Epoch is a student-run data and AI lab built around one principle: practical work creates deep learning.
-            We pick meaningful problems, ship prototypes, and document tradeoffs clearly so every project is useful and
-            reproducible.
-          </p>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <article className="rounded-2xl border border-amber-200/15 bg-black/10 p-6">
-              <h3 className="text-lg font-bold text-amber-100">Learn by shipping</h3>
-              <p className="mt-2 text-sm leading-relaxed text-stone-300">
-                We focus on execution from day one so newcomers build practical engineering confidence.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-amber-200/15 bg-black/10 p-6">
-              <h3 className="text-lg font-bold text-amber-100">Document the process</h3>
-              <p className="mt-2 text-sm leading-relaxed text-stone-300">
-                Project articles capture architecture decisions, results, and what we would improve next.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-amber-200/15 bg-black/10 p-6">
-              <h3 className="text-lg font-bold text-amber-100">Sustainable workflow</h3>
-              <p className="mt-2 text-sm leading-relaxed text-stone-300">
-                We use a lightweight workflow that makes project updates simple, fast, and consistent.
-              </p>
-            </article>
           </div>
         </div>
       </section>

@@ -25,14 +25,14 @@ export default function MobileNav() {
       </button>
 
       {mobileMenuOpen && (
-        <div className="absolute left-0 right-0 top-20 border-t border-slate-200/12 bg-[#1e293b]/95 py-4 backdrop-blur md:hidden">
+        <div className="absolute left-0 right-0 top-20 border-t border-slate-200/12 bg-[#1b140d]/95 py-4 backdrop-blur md:hidden">
           <div className="flex flex-col space-y-3 px-6">
             {siteConfig.navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-[0.12em] text-stone-300 transition-colors hover:bg-sky-300/10 hover:text-slate-100"
+                className="rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-[0.12em] text-stone-300 transition-colors hover:bg-[#8a6534]/18 hover:text-slate-100"
               >
                 {item.label}
               </Link>

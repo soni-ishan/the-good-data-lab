@@ -5,7 +5,7 @@ import { siteConfig } from "../data";
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#c4a24a]/20 bg-[#1e293b]/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#c4a24a]/20 bg-[#1b140d]/85 backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-10">
         <Link href="/" className="flex items-center gap-3" aria-label="Epoch home">
           <div className="rounded-xl border border-[#c4a24a]/45 bg-[#c4a24a]/15 p-2 text-[#fff7e6]">

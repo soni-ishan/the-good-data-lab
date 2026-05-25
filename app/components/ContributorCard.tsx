@@ -12,7 +12,7 @@ export default function ContributorCard({ contributor, variant = "default" }: Co
 
   return (
     <article
-      className={`rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/80 p-5 transition hover:-translate-y-0.5 hover:border-amber-400/30 ${
+      className={`rounded-2xl border border-slate-200/15 bg-[#22180f]/80 p-5 transition hover:-translate-y-0.5 hover:border-amber-400/30 ${
         isCompact ? "" : "shadow-[0_20px_60px_-35px_rgba(196,162,74,0.28)]"
       }`}
     >

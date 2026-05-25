@@ -79,7 +79,7 @@ export async function POST(request: Request) {
       subject: `Contact form message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
       html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0f172a;">
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0b0a09;">
           <h2>New contact form message</h2>
           <p><strong>Name:</strong> ${escapeHtml(name)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>

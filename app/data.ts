@@ -203,12 +203,12 @@ export const projects: Project[] = [
         "https://www.kaggle.com/competitions/csiro-biomass/leaderboard?search=The+Good+Data+Lab"
     },
     theme: {
-      bg: "bg-sky-400/10",
-      text: "text-sky-300",
-      border: "hover:border-sky-400/50",
-      tagBg: "bg-sky-950/60",
+      bg: "bg-[#6b4f2a]/18",
+      text: "text-[#d8b98a]",
+      border: "hover:border-[#9a7441]/60",
+      tagBg: "bg-[#3a2912]/70",
       tagText: "text-slate-100",
-      tagBorder: "border-sky-700/40"
+      tagBorder: "border-[#8a6534]/50"
     },
     contributors: ["gurinayat-mangat",
       "favour-ejike",
@@ -273,12 +273,12 @@ export const projects: Project[] = [
       demo: "https://www.youtube.com/watch?v=3jAxC7I3zYk"
     },
     theme: {
-      bg: "bg-teal-400/10",
-      text: "text-teal-300",
-      border: "hover:border-teal-400/50",
-      tagBg: "bg-teal-950/60",
+      bg: "bg-[#5c4220]/18",
+      text: "text-[#d8b98a]",
+      border: "hover:border-[#9a7441]/60",
+      tagBg: "bg-[#3a2912]/70",
       tagText: "text-slate-100",
-      tagBorder: "border-teal-700/40"
+      tagBorder: "border-[#8a6534]/50"
     },
     contributors: [
       "gurinayat-mangat",

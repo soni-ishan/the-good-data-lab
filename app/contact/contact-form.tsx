@@ -74,7 +74,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-3xl border border-[#c4a24a]/25 bg-[#1f2a3d]/80 p-6 shadow-[0_20px_60px_-35px_rgba(165,153,216,0.28)] sm:p-8">
+    <form onSubmit={handleSubmit} className="rounded-3xl border border-[#c4a24a]/25 bg-[#22180f]/80 p-6 shadow-[0_20px_60px_-35px_rgba(165,153,216,0.28)] sm:p-8">
       <div className="grid gap-5">
         <label className="grid gap-2">
           <span className="text-sm font-medium text-stone-200">Name</span>
@@ -86,7 +86,7 @@ export default function ContactForm() {
             required
             minLength={2}
             maxLength={80}
-            className="rounded-xl border border-[#c4a24a]/20 bg-[#0f172a] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#c4a24a]/60"
+            className="rounded-xl border border-[#c4a24a]/20 bg-[#0b0a09] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#c4a24a]/60"
             placeholder="Your name"
           />
         </label>
@@ -100,7 +100,7 @@ export default function ContactForm() {
             name="email"
             required
             maxLength={120}
-            className="rounded-xl border border-[#c4a24a]/20 bg-[#0f172a] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#c4a24a]/60"
+            className="rounded-xl border border-[#c4a24a]/20 bg-[#0b0a09] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#c4a24a]/60"
             placeholder="you@example.com"
           />
         </label>
@@ -115,7 +115,7 @@ export default function ContactForm() {
             rows={6}
             minLength={10}
             maxLength={3000}
-            className="rounded-xl border border-[#c4a24a]/20 bg-[#0f172a] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#c4a24a]/60"
+            className="rounded-xl border border-[#c4a24a]/20 bg-[#0b0a09] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#c4a24a]/60"
             placeholder="What would you like to share?"
           />
         </label>

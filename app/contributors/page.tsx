@@ -5,7 +5,7 @@ import { contributors } from "../data";
 
 export default function ContributorsPage() {
   return (
-    <main className="min-h-screen bg-[#0f172a] text-stone-100">
+    <main className="min-h-screen bg-[#0b0a09] text-stone-100">
       <SiteHeader />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-14 sm:px-8 lg:px-10">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/80">Contributors</p>

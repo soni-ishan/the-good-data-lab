@@ -19,7 +19,7 @@ const orderedProjects = [...projects].sort(
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#0f172a] text-stone-100">
+    <main className="min-h-screen bg-[#0b0a09] text-stone-100">
       <SiteHeader />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-14 sm:px-8 lg:px-10">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/80">Project Library</p>
@@ -33,12 +33,12 @@ export default function ProjectsPage() {
             return (
               <article
                 key={project.slug}
-                className={`rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
+                className={`rounded-2xl border border-slate-200/15 bg-[#22180f]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
               >
                 <div className="flex items-center justify-between">
                   <div
                     className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200/25 p-2 ${
-                      project.links.kaggle ? "bg-white" : "bg-[#1e293b]"
+                      project.links.kaggle ? "bg-white" : "bg-[#1b140d]"
                     }`}
                   >
                     <Image
@@ -78,7 +78,7 @@ export default function ProjectsPage() {
                       href={project.links.code}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
                     >
                       <Github className="h-4 w-4" aria-hidden="true" />
                       Code
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
                     >
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Demo
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
                       href={project.links.kaggle}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
                     >
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Kaggle

@@ -20,8 +20,8 @@ const orderedProjects = [...projects].sort(
 
 export default function Home() {
   return (
-    <main id="home" className="min-h-screen overflow-x-hidden bg-[#0f172a] text-stone-100 selection:bg-amber-300/30">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(196,162,74,0.24),transparent_45%),radial-gradient(circle_at_80%_20%,rgba(208,179,98,0.18),transparent_40%),linear-gradient(180deg,#273449_0%,#0f172a_60%)]" />
+    <main id="home" className="min-h-screen overflow-x-hidden bg-[#0b0a09] text-stone-100 selection:bg-amber-300/30">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(196,162,74,0.24),transparent_45%),radial-gradient(circle_at_80%_20%,rgba(208,179,98,0.18),transparent_40%),linear-gradient(180deg,#2a1f14_0%,#0b0a09_60%)]" />
       <SiteHeader />
 
       <section className="relative px-6 pb-20 pt-16 sm:px-8 lg:px-10 lg:pb-28 lg:pt-24">
@@ -50,7 +50,7 @@ export default function Home() {
                 href={siteConfig.discord}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-200/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-100 transition hover:bg-sky-300/10"
+                className="inline-flex items-center justify-center rounded-xl border border-slate-200/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-100 transition hover:bg-[#8a6534]/18"
               >
                 Join Discord
               </a>
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4">
-            <article className="rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/85 p-6">
+            <article className="rounded-2xl border border-slate-200/15 bg-[#22180f]/85 p-6">
               <div className="mb-4 flex items-center justify-between">
                 <div className="rounded-xl bg-amber-400/10 p-3 text-slate-100">
                   <Sparkles className="h-6 w-6" aria-hidden="true" />
@@ -73,7 +73,7 @@ export default function Home() {
               </p>
             </article>
 
-            <article className="rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/85 p-6">
+            <article className="rounded-2xl border border-slate-200/15 bg-[#22180f]/85 p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/80">Get involved</p>
               <h2 className="mt-2 text-xl font-bold text-stone-100">Want to build with us?</h2>
               <p className="mt-2 text-sm leading-relaxed text-stone-300">
@@ -95,7 +95,7 @@ export default function Home() {
       </section>
 
       <section id="about" className="relative scroll-mt-28 px-6 pb-20 sm:px-8 lg:px-10" aria-labelledby="about-heading">
-        <div className="mx-auto w-full max-w-7xl rounded-3xl border border-slate-200/12 bg-[#1f2a3d]/70 p-8 lg:p-12">
+        <div className="mx-auto w-full max-w-7xl rounded-3xl border border-slate-200/12 bg-[#22180f]/70 p-8 lg:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/80">About</p>
           <h2 id="about-heading" className="mt-3 text-3xl font-black uppercase text-stone-50 sm:text-5xl">
             From classroom to real-world delivery
@@ -149,12 +149,12 @@ export default function Home() {
               return (
                 <article
                   key={project.slug}
-                  className={`rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
+                  className={`rounded-2xl border border-slate-200/15 bg-[#22180f]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
                 >
                   <div className="flex items-center justify-between">
                     <div
                       className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200/25 p-2 ${
-                        project.links.kaggle ? "bg-white" : "bg-[#1e293b]"
+                        project.links.kaggle ? "bg-white" : "bg-[#1b140d]"
                       }`}
                     >
                       <Image
@@ -191,7 +191,7 @@ export default function Home() {
                         href={project.links.code}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
                       >
                         <Github className="h-4 w-4" aria-hidden="true" />
                         Code
@@ -202,7 +202,7 @@ export default function Home() {
                         href={project.links.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
                       >
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         Demo
@@ -213,7 +213,7 @@ export default function Home() {
                         href={project.links.kaggle}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
                       >
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         Kaggle

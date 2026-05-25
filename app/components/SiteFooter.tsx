@@ -3,7 +3,7 @@ import { siteConfig } from "../data";
 
 export default function SiteFooter() {
   return (
-    <footer className="relative z-10 mt-8 border-t border-amber-400/20 bg-[#111827]/95 px-6 py-12 backdrop-blur-sm sm:px-8 lg:px-10">
+    <footer className="relative z-10 mt-8 border-t border-amber-400/20 bg-[#120f0c]/95 px-6 py-12 backdrop-blur-sm sm:px-8 lg:px-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div>
           <p className="text-sm uppercase tracking-[0.2em] text-slate-200/70">{siteConfig.name}</p>

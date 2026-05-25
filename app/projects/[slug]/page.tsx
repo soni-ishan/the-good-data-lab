@@ -45,7 +45,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
   );
 
   return (
-    <main className="min-h-screen bg-[#0f172a] text-stone-100">
+    <main className="min-h-screen bg-[#0b0a09] text-stone-100">
       <SiteHeader />
 
       {/* ── Header strip ───────────────────────────────────────────── */}
@@ -214,7 +214,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
 
         {/* ── Contributors ───────────────────────────────────────────── */}
         <hr className="my-16 border-slate-200/12" />
-        <section className="rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/80 p-6 sm:p-8">
+        <section className="rounded-2xl border border-slate-200/15 bg-[#22180f]/80 p-6 sm:p-8">
           <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300/70">Contributors</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {projectContributors.map((contributor) => (

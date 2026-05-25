@@ -68,7 +68,7 @@ export default function ProjectsPage() {
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-2 rounded-lg bg-amber-400 px-4 py-2 text-sm font-semibold text-[#372b12] transition hover:bg-amber-300"
+                    className="inline-flex items-center gap-2 rounded-lg bg-violet-400 px-4 py-2 text-sm font-semibold text-[#1e1331] transition hover:bg-violet-300"
                   >
                     Read article
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -78,7 +78,7 @@ export default function ProjectsPage() {
                       href={project.links.code}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#a599d8]/18"
                     >
                       <Github className="h-4 w-4" aria-hidden="true" />
                       Code
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#a599d8]/18"
                     >
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Demo
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
                       href={project.links.kaggle}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#a599d8]/18"
                     >
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Kaggle

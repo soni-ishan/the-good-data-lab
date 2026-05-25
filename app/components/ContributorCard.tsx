@@ -12,12 +12,12 @@ export default function ContributorCard({ contributor, variant = "default" }: Co
 
   return (
     <article
-      className={`rounded-2xl border border-slate-200/15 bg-[#22180f]/80 p-5 transition hover:-translate-y-0.5 hover:border-amber-400/30 ${
+      className={`rounded-2xl border border-slate-200/15 bg-[#22180f]/80 p-5 transition hover:-translate-y-0.5 hover:border-violet-400/30 ${
         isCompact ? "" : "shadow-[0_20px_60px_-35px_rgba(196,162,74,0.28)]"
       }`}
     >
       <div className="flex items-center gap-4">
-        <div className={`relative overflow-hidden rounded-full ring-1 ring-amber-200/25 ${isCompact ? "h-14 w-14" : "h-20 w-20"}`}>
+        <div className={`relative overflow-hidden rounded-full ring-1 ring-violet-200/25 ${isCompact ? "h-14 w-14" : "h-20 w-20"}`}>
           {contributor.profileImage ? (
             <Image
               src={contributor.profileImage}
@@ -27,7 +27,7 @@ export default function ContributorCard({ contributor, variant = "default" }: Co
               sizes={isCompact ? "56px" : "80px"}
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-amber-400/20 text-base font-bold text-slate-100">
+            <div className="flex h-full w-full items-center justify-center bg-violet-400/20 text-base font-bold text-slate-100">
               {contributor.avatarInitials}
             </div>
           )}
@@ -45,7 +45,7 @@ export default function ContributorCard({ contributor, variant = "default" }: Co
             href={contributor.links.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-100 transition hover:bg-amber-300/20"
+            className="inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-100 transition hover:bg-violet-300/20"
           >
             <Linkedin className="h-3.5 w-3.5" aria-hidden="true" />
             LinkedIn
@@ -56,7 +56,7 @@ export default function ContributorCard({ contributor, variant = "default" }: Co
             href={contributor.links.github}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-100 transition hover:bg-amber-300/20"
+            className="inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-100 transition hover:bg-violet-300/20"
           >
             <Github className="h-3.5 w-3.5" aria-hidden="true" />
             GitHub

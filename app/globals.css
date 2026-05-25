@@ -34,8 +34,8 @@ pre {
 /* Grid pattern */
 .grid-pattern {
   background-image: 
-    linear-gradient(rgba(196, 162, 74, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(196, 162, 74, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(139, 126, 200, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 126, 200, 0.08) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 

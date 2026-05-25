@@ -32,7 +32,7 @@ export default function MobileNav() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-[0.12em] text-stone-300 transition-colors hover:bg-[#8a6534]/18 hover:text-slate-100"
+                className="rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-[0.12em] text-stone-300 transition-colors hover:bg-[#a599d8]/18 hover:text-slate-100"
               >
                 {item.label}
               </Link>
@@ -41,7 +41,7 @@ export default function MobileNav() {
               href={siteConfig.discord}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-slate-100 transition hover:bg-amber-300/25"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-slate-100 transition hover:bg-violet-300/25"
             >
               <MessageSquare className="w-5 h-5" aria-hidden="true" />
               Join Discord

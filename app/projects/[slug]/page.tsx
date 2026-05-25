@@ -80,7 +80,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
                   href={project.links.code}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-amber-300/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-violet-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-violet-300/20"
                 >
                   <Github className="h-4 w-4" aria-hidden="true" />
                   Repository
@@ -91,7 +91,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
                   href={project.links.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-amber-300/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-violet-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-violet-300/20"
                 >
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   Live demo
@@ -102,7 +102,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
                   href={project.links.kaggle}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-amber-300/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-violet-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-violet-300/20"
                 >
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   Kaggle
@@ -193,7 +193,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
             <ul className="mt-5 space-y-4">
               {project.article.outcomes.map((outcome) => (
                 <li key={outcome} className="flex gap-4 text-stone-300">
-                  <span className="mt-2.5 h-px w-6 shrink-0 bg-amber-400/60" aria-hidden="true" />
+                  <span className="mt-2.5 h-px w-6 shrink-0 bg-violet-400/60" aria-hidden="true" />
                   <span className="leading-relaxed">{outcome}</span>
                 </li>
               ))}
@@ -204,7 +204,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
             <ul className="mt-5 space-y-4">
               {project.article.nextSteps.map((step) => (
                 <li key={step} className="flex gap-4 text-stone-300">
-                  <span className="mt-2.5 h-px w-6 shrink-0 bg-amber-400/60" aria-hidden="true" />
+                  <span className="mt-2.5 h-px w-6 shrink-0 bg-violet-400/60" aria-hidden="true" />
                   <span className="leading-relaxed">{step}</span>
                 </li>
               ))}

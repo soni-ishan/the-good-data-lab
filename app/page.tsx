@@ -20,8 +20,8 @@ const orderedProjects = [...projects].sort(
 
 export default function Home() {
   return (
-    <main id="home" className="min-h-screen overflow-x-hidden bg-[#0b0a09] text-stone-100 selection:bg-amber-300/30">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(196,162,74,0.24),transparent_45%),radial-gradient(circle_at_80%_20%,rgba(208,179,98,0.18),transparent_40%),linear-gradient(180deg,#2a1f14_0%,#0b0a09_60%)]" />
+    <main id="home" className="min-h-screen overflow-x-hidden bg-[#0b0a09] text-stone-100 selection:bg-violet-300/30">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(139,126,200,0.24),transparent_45%),radial-gradient(circle_at_80%_20%,rgba(165,153,216,0.18),transparent_40%),linear-gradient(180deg,#2a1f14_0%,#0b0a09_60%)]" />
       <SiteHeader />
 
       <section className="relative px-6 pb-20 pt-16 sm:px-8 lg:px-10 lg:pb-28 lg:pt-24">
@@ -29,7 +29,7 @@ export default function Home() {
           <div>
             <h1 className="text-4xl font-black uppercase leading-tight text-stone-50 sm:text-5xl lg:text-7xl">
               Every project is an
-              <span className="block text-amber-300">epoch</span>
+              <span className="block text-violet-300">epoch</span>
             </h1>
             <p className="mt-5 text-base font-medium uppercase tracking-[0.18em] text-slate-300/80">
               One full cycle of learning, building, and growing.
@@ -41,7 +41,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#372b12] transition hover:bg-amber-300"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-violet-400 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#1e1331] transition hover:bg-violet-300"
               >
                 Browse projects
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -50,7 +50,7 @@ export default function Home() {
                 href={siteConfig.discord}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-200/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-100 transition hover:bg-[#8a6534]/18"
+                className="inline-flex items-center justify-center rounded-xl border border-slate-200/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-100 transition hover:bg-[#a599d8]/18"
               >
                 Join Discord
               </a>
@@ -60,10 +60,10 @@ export default function Home() {
           <div className="grid gap-4">
             <article className="rounded-2xl border border-slate-200/15 bg-[#22180f]/85 p-6">
               <div className="mb-4 flex items-center justify-between">
-                <div className="rounded-xl bg-amber-400/10 p-3 text-slate-100">
+                <div className="rounded-xl bg-violet-400/10 p-3 text-slate-100">
                   <Sparkles className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <span className="rounded-full border border-amber-400/35 bg-amber-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-slate-100">
+                <span className="rounded-full border border-violet-400/35 bg-violet-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-slate-100">
                   Upcoming
                 </span>
               </div>
@@ -84,7 +84,7 @@ export default function Home() {
                 href={siteConfig.discord}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-amber-400 px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-[#372b12] transition hover:bg-amber-300"
+                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-violet-400 px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-[#1e1331] transition hover:bg-violet-300"
               >
                 Join the community
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -181,7 +181,7 @@ export default function Home() {
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="inline-flex items-center gap-2 rounded-lg bg-amber-400 px-4 py-2 text-sm font-semibold text-[#372b12] transition hover:bg-amber-300"
+                      className="inline-flex items-center gap-2 rounded-lg bg-violet-400 px-4 py-2 text-sm font-semibold text-[#1e1331] transition hover:bg-violet-300"
                     >
                       Read article
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -191,7 +191,7 @@ export default function Home() {
                         href={project.links.code}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#a599d8]/18"
                       >
                         <Github className="h-4 w-4" aria-hidden="true" />
                         Code
@@ -202,7 +202,7 @@ export default function Home() {
                         href={project.links.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#a599d8]/18"
                       >
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         Demo
@@ -213,7 +213,7 @@ export default function Home() {
                         href={project.links.kaggle}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#8a6534]/18"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-[#a599d8]/18"
                       >
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         Kaggle

@@ -19,10 +19,10 @@ const orderedProjects = [...projects].sort(
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#06130e] text-stone-100">
+    <main className="min-h-screen bg-[#0f172a] text-stone-100">
       <SiteHeader />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-14 sm:px-8 lg:px-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200/80">Project Library</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/80">Project Library</p>
         <h1 className="mt-3 text-4xl font-black uppercase text-stone-50 sm:text-5xl">Build logs and outcomes</h1>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-stone-300">
           Each card links to a dedicated article page with context, architecture decisions, visuals, and contributors.
@@ -33,12 +33,12 @@ export default function ProjectsPage() {
             return (
               <article
                 key={project.slug}
-                className={`rounded-2xl border border-emerald-200/15 bg-[#0b2118]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
+                className={`rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/80 p-6 transition hover:-translate-y-0.5 ${project.theme.border}`}
               >
                 <div className="flex items-center justify-between">
                   <div
-                    className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-emerald-200/25 p-2 ${
-                      project.links.kaggle ? "bg-white" : "bg-[#081a13]"
+                    className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200/25 p-2 ${
+                      project.links.kaggle ? "bg-white" : "bg-[#1e293b]"
                     }`}
                   >
                     <Image
@@ -68,7 +68,7 @@ export default function ProjectsPage() {
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-2 rounded-lg bg-emerald-300 px-4 py-2 text-sm font-semibold text-[#052016] transition hover:bg-emerald-200"
+                    className="inline-flex items-center gap-2 rounded-lg bg-amber-400 px-4 py-2 text-sm font-semibold text-[#372b12] transition hover:bg-amber-300"
                   >
                     Read article
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -78,7 +78,7 @@ export default function ProjectsPage() {
                       href={project.links.code}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-emerald-200/30 px-4 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200/10"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
                     >
                       <Github className="h-4 w-4" aria-hidden="true" />
                       Code
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-emerald-200/30 px-4 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200/10"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
                     >
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Demo
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
                       href={project.links.kaggle}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-emerald-200/30 px-4 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200/10"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200/30 px-4 py-2 text-sm text-slate-100 transition hover:bg-sky-300/10"
                     >
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Kaggle

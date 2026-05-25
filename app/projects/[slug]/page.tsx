@@ -45,15 +45,15 @@ export default async function ProjectArticlePage({ params }: PageProps) {
   );
 
   return (
-    <main className="min-h-screen bg-[#06130e] text-stone-100">
+    <main className="min-h-screen bg-[#0f172a] text-stone-100">
       <SiteHeader />
 
       {/* ── Header strip ───────────────────────────────────────────── */}
-      <div className="border-b border-emerald-200/10 px-6 py-10 sm:px-8 lg:px-10">
+      <div className="border-b border-slate-200/12 px-6 py-10 sm:px-8 lg:px-10">
         <div className="mx-auto w-full max-w-4xl">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-emerald-200"
+            className="inline-flex items-center gap-2 text-sm font-medium text-stone-400 transition hover:text-slate-100"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             All projects
@@ -80,7 +80,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
                   href={project.links.code}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-300/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-300/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-amber-300/20"
                 >
                   <Github className="h-4 w-4" aria-hidden="true" />
                   Repository
@@ -91,7 +91,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
                   href={project.links.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-300/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-300/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-amber-300/20"
                 >
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   Live demo
@@ -102,7 +102,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
                   href={project.links.kaggle}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-300/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-300/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-amber-300/20"
                 >
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   Kaggle
@@ -115,7 +115,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
 
       {/* ── Hero video/image ──────────────────────────────────────── */}
       <div className="mx-auto w-full max-w-5xl px-6 pt-10 sm:px-8 lg:px-10">
-        <div className="overflow-hidden rounded-2xl border border-emerald-200/15">
+        <div className="overflow-hidden rounded-2xl border border-slate-200/15">
           {project.slug === "microsoft-ai-dev-days" && project.links.demo?.includes("youtube") ? (
             <iframe
               width="100%"
@@ -149,7 +149,7 @@ export default async function ProjectArticlePage({ params }: PageProps) {
               {/* alternating: odd sections flip image to right on large screens */}
               <div className={`flex flex-col gap-10 lg:flex-row lg:items-start ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
                 <div className="lg:flex-1">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/70">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300/70">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h2 className="mt-2 text-2xl font-bold text-stone-100 sm:text-3xl">{section.heading}</h2>
@@ -179,32 +179,32 @@ export default async function ProjectArticlePage({ params }: PageProps) {
               </div>
 
               {i < project.article.sections.length - 1 && (
-                <hr className="mt-16 border-emerald-200/10" />
+                <hr className="mt-16 border-slate-200/12" />
               )}
             </section>
           ))}
         </div>
 
         {/* ── Outcomes & Next Steps ──────────────────────────────────── */}
-        <hr className="my-16 border-emerald-200/10" />
+        <hr className="my-16 border-slate-200/12" />
         <div className="grid gap-12 sm:grid-cols-2">
           <div>
-            <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/70">Outcomes</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300/70">Outcomes</h2>
             <ul className="mt-5 space-y-4">
               {project.article.outcomes.map((outcome) => (
                 <li key={outcome} className="flex gap-4 text-stone-300">
-                  <span className="mt-2.5 h-px w-6 shrink-0 bg-emerald-400/60" aria-hidden="true" />
+                  <span className="mt-2.5 h-px w-6 shrink-0 bg-amber-400/60" aria-hidden="true" />
                   <span className="leading-relaxed">{outcome}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/70">Next Steps</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300/70">Next Steps</h2>
             <ul className="mt-5 space-y-4">
               {project.article.nextSteps.map((step) => (
                 <li key={step} className="flex gap-4 text-stone-300">
-                  <span className="mt-2.5 h-px w-6 shrink-0 bg-emerald-400/60" aria-hidden="true" />
+                  <span className="mt-2.5 h-px w-6 shrink-0 bg-amber-400/60" aria-hidden="true" />
                   <span className="leading-relaxed">{step}</span>
                 </li>
               ))}
@@ -213,9 +213,9 @@ export default async function ProjectArticlePage({ params }: PageProps) {
         </div>
 
         {/* ── Contributors ───────────────────────────────────────────── */}
-        <hr className="my-16 border-emerald-200/10" />
-        <section className="rounded-2xl border border-emerald-200/15 bg-[#0b2118]/80 p-6 sm:p-8">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/70">Contributors</h2>
+        <hr className="my-16 border-slate-200/12" />
+        <section className="rounded-2xl border border-slate-200/15 bg-[#1f2a3d]/80 p-6 sm:p-8">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300/70">Contributors</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {projectContributors.map((contributor) => (
               <ContributorCard key={contributor.id} contributor={contributor} variant="compact" />

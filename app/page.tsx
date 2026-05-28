@@ -165,9 +165,11 @@ export default function Home() {
                         className="h-10 w-10 object-contain"
                       />
                     </div>
-                    <span className={`rounded-full border px-3 py-1 text-xs ${project.theme.tagBg} ${project.theme.tagText} ${project.theme.tagBorder}`}>
-                      {project.status ?? project.rank}
-                    </span>
+                    {project.slug === "microsoft-ai-dev-days" ? (
+                      <span className={`rounded-full border px-3 py-1 text-xs ${project.theme.tagBg} ${project.theme.tagText} ${project.theme.tagBorder}`}>
+                        {project.status ?? project.rank}
+                      </span>
+                    ) : null}
                   </div>
                   <h3 className="mt-5 text-2xl font-bold text-stone-100">{project.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-stone-300">{project.shortDescription}</p>

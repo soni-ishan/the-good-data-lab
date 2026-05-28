@@ -59,6 +59,7 @@ export const siteConfig = {
   slogan: "Each project is an epoch — one full cycle of learning, building, and growing.",
   description:
     "A student-run initiative that builds practical data science and AI projects.",
+  contactEmail: "epoch.outreach@gmail.com",
   discord: "https://discord.gg/w4YuB5QY3u",
   navItems: [
     { label: "Home", href: "/#home" },

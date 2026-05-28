@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Source_Code_Pro } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Epoch",
   description: "Code. Data. Community. Student-built data and AI projects with documented outcomes.",
   icons: {
-    icon: `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236ee7b7%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%224 17 10 11 4 5%22/><line x1=%2212%22 x2=%2220%22 y1=%2219%22 y2=%2219%22/></svg>`
+    icon: `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238b7ec8%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%224 17 10 11 4 5%22/><line x1=%2212%22 x2=%2220%22 y1=%2219%22 y2=%2219%22/></svg>`
   },
   openGraph: {
     title: "Epoch",
@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     title: "Epoch",
     description: "A student-run lab shipping practical data and AI projects with transparent project writeups.",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#8b7ec8",
 };
 
 export default function RootLayout({

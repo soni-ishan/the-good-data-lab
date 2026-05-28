@@ -2,8 +2,8 @@
 
 :root {
   --foreground-rgb: 245, 245, 244;
-  --background-start-rgb: 6, 19, 14;
-  --background-end-rgb: 10, 31, 23;
+  --background-start-rgb: 11, 10, 9;
+  --background-end-rgb: 34, 24, 15;
 }
 
 body {
@@ -34,8 +34,8 @@ pre {
 /* Grid pattern */
 .grid-pattern {
   background-image: 
-    linear-gradient(rgba(110, 231, 183, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(110, 231, 183, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(139, 126, 200, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 126, 200, 0.08) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 

@@ -59,6 +59,7 @@ export const siteConfig = {
   slogan: "Each project is an epoch — one full cycle of learning, building, and growing.",
   description:
     "A student-run initiative that builds practical data science and AI projects.",
+  contactEmail: "epoch.outreach@gmail.com",
   discord: "https://discord.gg/w4YuB5QY3u",
   navItems: [
     { label: "Home", href: "/#home" },
@@ -133,12 +134,12 @@ export const projects: Project[] = [
       demo: "http://ec2-34-227-86-112.compute-1.amazonaws.com"
     },
     theme: {
-      bg: "bg-emerald-500/10",
-      text: "text-emerald-300",
-      border: "hover:border-emerald-400/50",
-      tagBg: "bg-emerald-950/60",
-      tagText: "text-emerald-200",
-      tagBorder: "border-emerald-700/40"
+      bg: "bg-violet-400/10",
+      text: "text-violet-300",
+      border: "hover:border-violet-400/50",
+      tagBg: "bg-violet-950/60",
+      tagText: "text-slate-100",
+      tagBorder: "border-violet-700/40"
     },
     contributors: ["gurinayat-mangat",
       "favour-ejike",
@@ -203,12 +204,12 @@ export const projects: Project[] = [
         "https://www.kaggle.com/competitions/csiro-biomass/leaderboard?search=The+Good+Data+Lab"
     },
     theme: {
-      bg: "bg-emerald-500/10",
-      text: "text-emerald-300",
-      border: "hover:border-emerald-400/50",
-      tagBg: "bg-emerald-950/60",
-      tagText: "text-emerald-200",
-      tagBorder: "border-emerald-700/40"
+      bg: "bg-violet-400/10",
+      text: "text-violet-300",
+      border: "hover:border-violet-400/60",
+      tagBg: "bg-violet-950/60",
+      tagText: "text-slate-100",
+      tagBorder: "border-violet-700/40"
     },
     contributors: ["gurinayat-mangat",
       "favour-ejike",
@@ -273,12 +274,12 @@ export const projects: Project[] = [
       demo: "https://www.youtube.com/watch?v=3jAxC7I3zYk"
     },
     theme: {
-      bg: "bg-emerald-500/10",
-      text: "text-emerald-300",
-      border: "hover:border-emerald-400/50",
-      tagBg: "bg-emerald-950/60",
-      tagText: "text-emerald-200",
-      tagBorder: "border-emerald-700/40"
+      bg: "bg-violet-400/10",
+      text: "text-violet-300",
+      border: "hover:border-violet-400/60",
+      tagBg: "bg-violet-950/60",
+      tagText: "text-slate-100",
+      tagBorder: "border-violet-700/40"
     },
     contributors: [
       "gurinayat-mangat",

@@ -74,7 +74,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-3xl border border-emerald-200/15 bg-[#0b2118]/80 p-6 shadow-[0_20px_60px_-35px_rgba(52,211,153,0.45)] sm:p-8">
+    <form onSubmit={handleSubmit} className="rounded-3xl border border-[#8b7ec8]/25 bg-[#22180f]/80 p-6 shadow-[0_20px_60px_-35px_rgba(165,153,216,0.28)] sm:p-8">
       <div className="grid gap-5">
         <label className="grid gap-2">
           <span className="text-sm font-medium text-stone-200">Name</span>
@@ -86,7 +86,7 @@ export default function ContactForm() {
             required
             minLength={2}
             maxLength={80}
-            className="rounded-xl border border-emerald-200/15 bg-[#06130e] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-emerald-300/40"
+            className="rounded-xl border border-[#8b7ec8]/20 bg-[#0b0a09] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#8b7ec8]/60"
             placeholder="Your name"
           />
         </label>
@@ -100,7 +100,7 @@ export default function ContactForm() {
             name="email"
             required
             maxLength={120}
-            className="rounded-xl border border-emerald-200/15 bg-[#06130e] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-emerald-300/40"
+            className="rounded-xl border border-[#8b7ec8]/20 bg-[#0b0a09] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#8b7ec8]/60"
             placeholder="you@example.com"
           />
         </label>
@@ -115,7 +115,7 @@ export default function ContactForm() {
             rows={6}
             minLength={10}
             maxLength={3000}
-            className="rounded-xl border border-emerald-200/15 bg-[#06130e] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-emerald-300/40"
+            className="rounded-xl border border-[#8b7ec8]/20 bg-[#0b0a09] px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-500 focus:border-[#8b7ec8]/60"
             placeholder="What would you like to share?"
           />
         </label>
@@ -124,7 +124,7 @@ export default function ContactForm() {
           <p
             className={`rounded-xl border px-4 py-3 text-sm ${
               feedback.type === "success"
-                ? "border-emerald-300/30 bg-emerald-300/10 text-emerald-100"
+                ? "border-[#8b7ec8]/45 bg-[#8b7ec8]/15 text-[#fff7e6]"
                 : "border-rose-400/30 bg-rose-500/10 text-rose-100"
             }`}
           >
@@ -135,7 +135,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center rounded-xl bg-emerald-300 px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#052016] transition hover:bg-emerald-200 disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex items-center justify-center rounded-xl bg-[#8b7ec8] px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#1e1331] transition hover:bg-[#a599d8] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isSubmitting ? "Sending..." : "Send message"}
         </button>
